@@ -31,7 +31,7 @@ export const Stats = () => {
                         </div>
                     </div>
                     <p className='text-center md:text-xl text-gray-500'>
-                        Data proves it—AI search is not the future, it's already here.
+                        Data proves it—AI search is not the future, it&apos;s already here.
                     </p>
                 </div>
             </div>

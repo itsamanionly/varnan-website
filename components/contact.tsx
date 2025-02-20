@@ -6,9 +6,9 @@ export const Contact = () => {
         <div className="h-fit  w-full  bg-white  bg-dot-black/[0.5] relative flex items-center justify-center">
             {/* Radial gradient for the container to give a faded look */}
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-            <div className='container mx-auto py-40 '>
+            <div className='container mx-auto py-20 lg:py-40 '>
                 <div className='bg-white w-[80%] mx-auto text-center p-6 border rounded-lg drop-shadow-sm'>
-                    <h2 className='text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-center'> The Future of Search is AI—Let's Get You There!
+                    <h2 className='text-2xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-center'> The Future of Search is AI—Let&apos;s Get You There!
                     </h2>
                     <div className=" flex items-center justify-center mt-4">
                         <Link href="/">
