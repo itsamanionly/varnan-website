@@ -4,21 +4,37 @@
 
 
 
-:root {
+/* :root {
   --color-1: 180, 100%, 60%;
   --color-2: 220, 100%, 60%;
   --color-3: 260, 100%, 60%;
   --color-4: 300, 100%, 60%;
   --color-5: 340, 100%, 60%;
+} */
+:root {
+  --color-1: #810CA8;
+  --color-2: #E80F88;
+  --color-3: #F05454;
+  --color-4: #D89216;
+  --color-5: #7D0633;
 }
 .gradient-text {
-  background: linear-gradient(
+  /* background: linear-gradient(
     270deg,
     #ff6b6b,
     #feca57,
     #48dbfb,
     #ff9ff3,
     #54a0ff
+  ); */
+  background: linear-gradient(
+    250deg,
+    #810CA8,
+    #E80F88,
+    #F05454,
+    #D89216,
+    #7D0633
+    
   );
   background-size: 1000% 1000%;
   -webkit-background-clip: text;

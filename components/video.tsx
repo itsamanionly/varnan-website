@@ -37,7 +37,7 @@ export const Video = () => {
                 <ModalBody className='bg-trasparent border-none aspect-video '>
                     <ModalContent className='bg-trasparent p-0 md:p-0 aspect-video  '>
                         <div className='p-2 rounded-lg bg-white/90'>
-                            <video autoPlay muted loop className='w-full h-full rounded-lg' controls>
+                            <video autoPlay loop className='w-full h-full rounded-lg' controls>
                                 <source src="/test.mp4" type="video/mp4" />
                             </video>
                         </div>
