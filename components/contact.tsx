@@ -16,24 +16,11 @@ export const Contact = () => {
                                 className="bg-gradient-to-br w-fit px-4 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800  text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                                 type="submit"
                             >
-                                Get Started &rarr;
+                                Book a Call
                                 <BottomGradient />
                             </button>
                         </Link>
                     </div>
-                    {/* <p className='mt-3 text-lg leading-relaxed tracking-tight text-slate-600  text-center'>
-                        Let's start building today.
-                    </p> */}
-                    {/* <div className="w-[60%]  mx-auto mt-4 flex items-center justify-center gap-2 ">
-                        <Input autoComplete='off' id="email" placeholder="projectmayhem@fc.com" type="email" className='w-[300px]' />
-                        <button
-                            className="bg-gradient-to-br w-fit px-4 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800  text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                            type="submit"
-                        >
-                            Get Started &rarr;
-                            <BottomGradient />
-                        </button>
-                    </div> */}
                 </div>
             </div>
         </div>

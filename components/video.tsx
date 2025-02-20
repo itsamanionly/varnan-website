@@ -7,7 +7,7 @@ export const Video = () => {
         <section className='flex items-center justify-center'>
             <Modal>
                 <ModalTrigger className=" bg-white group text-black flex justify-center  group/modal-btn">
-                    <div className='lg:w-[80%] mx-auto relative'>
+                    <div className='relative'>
                         <Image src="https://tierly.app/landing/tierly_hero_light.png" width={1000} height={1000} className='w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-lg shadow-lg border' alt="ai" />
                         <div className="absolute inset-0 flex items-center justify-center group-hover:scale-100 scale-[0.9] transition-all duration-200 ease-out rounded-2xl">
                             <div className='bg-[#18181b]/10 flex items-center justify-center rounded-full backdrop-blur-md size-28'>

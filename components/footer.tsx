@@ -6,9 +6,14 @@ export const Footer = () => {
         <footer className='border-t border-b py-3 '>
             <div className="container mx-auto flex flex-col md:flex-row gap-4 items-center justify-between  ">
                 <Logo />
-                <p>
-                    Let&apos;s Talk: <Link href='mailto:'>email@gmail.com</Link>
-                </p>
+                <div className='flex gap-4 items-center'>
+                    <Link href={"/"} className=''>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+                    </Link>
+                    <Link href='mailto:'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-mail-plus"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /><path d="M19 16v6" /><path d="M16 19h6" /></svg>
+                    </Link>
+                </div>
                 <p>
                     Copyright © 2025 <span className='font-semibold'>varnan</span>
                 </p>

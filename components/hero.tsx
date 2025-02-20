@@ -3,7 +3,7 @@ import React from 'react'
 export const Hero = () => {
     return (
         <section className='pt-10 lg:pt-28'>
-            <h1 className="text-balance z-50 lg:text-center text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl ">
+            <h1 className="text-balance z-50 text-center text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl ">
                 Go Beyond Google.
                 <br className="block " />
                 Win AI {" "}
@@ -65,7 +65,7 @@ export const Hero = () => {
                     </div>
                 </span>
             </h1>
-            <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium lg:text-center py-4">
+            <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium text-center py-4">
                 Varnan elevates your startup in AI search, making your content stand out to ChatGPT, Perplexity, and LLMs.
             </p>
         </section>

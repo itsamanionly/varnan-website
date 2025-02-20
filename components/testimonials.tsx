@@ -4,29 +4,33 @@ import { cn } from '@/lib/utils'
 
 export const Testimonials = () => {
     return (
-        <section className='py-10 text-center'>
-            <h2 className='text-2xl md:text-4xl lg:hidden py-10 font-bold text-gray-600'>Trusted by world class AI teams</h2>
-            <div className='flex items-center lg:max-w-[70%]  mx-auto justify-center mb-4 lg:mb-10 lg:px-8 gap-4  lg:gap-10'>
-                <Card className='w-[130px] lg:w-[250px] lg:h-[90px]'>
-                    <Image src="/tipsy-1.jpg" width={180} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
-                </Card>
-                <Card className='w-[130px] lg:w-[230px] lg:h-[90px]'>
-                    <Image src="/hsbc.png" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
-                </Card>
-                <Card className='w-[90px] lg:w-[250px] lg:h-[90px]'>
-                    <Image src="/iffort-1.png" width={150} height={100} alt="bluelearn" className='grayscale object-cover' />
-                </Card>
+        <div className="h-fit  w-full  bg-white  bg-dot-black/[0.5] relative flex items-center justify-center">
+            {/* Radial gradient for the container to give a faded look */}
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <div className='container mx-auto py-10 lg:py-20 z-50'>
+                <h2 className='text-2xl md:text-4xl text-center lg:hidden font-bold text-gray-700'>Trusted by world class AI teams</h2>
+                <div className='flex items-center lg:max-w-[70%] mt-10 lg:mt-0 mx-auto justify-center mb-4 lg:mb-10 lg:px-8 gap-4  lg:gap-10'>
+                    <Card className='w-[130px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
+                        <Image src="/tipsy-1.jpg" width={180} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
+                    </Card>
+                    <Card className='w-[130px] lg:w-[230px] lg:h-[90px] bg-white drop-shadow-sm'>
+                        <Image src="/hsbc.png" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
+                    </Card>
+                    <Card className='w-[90px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
+                        <Image src="/iffort-1.png" width={150} height={100} alt="bluelearn" className='grayscale object-cover' />
+                    </Card>
+                </div>
+                <div className='flex items-center lg:max-w-[70%]  mx-auto  justify-center lg:justify-between lg:px-8 flex-grow flex-wrap gap-4 lg:gap-10'>
+                    <Card className='w-[90px] lg:w-[100px] lg:h-[80px] bg-white drop-shadow-sm'>
+                        <Image src="/tecon.png" width={90} height={100} alt="bluelearn" className='grayscale object-cover' />
+                    </Card>
+                    <h2 className='text-3xl md:text-4xl hidden lg:block font-medium text-gray-600'>Trusted by world class AI teams</h2>
+                    <Card className='w-[90px] lg:w-[110px] lg:h-[80px] bg-white drop-shadow-sm'>
+                        <Image src="/mastercard.svg" width={150} height={100} alt="bluelearn" className='grayscale ' />
+                    </Card>
+                </div>
             </div>
-            <div className='flex items-center lg:max-w-[70%]  mx-auto  justify-center lg:justify-between lg:px-8 flex-grow flex-wrap gap-4 lg:gap-10'>
-                <Card className='w-[90px] lg:w-[100px] lg:h-[80px]'>
-                    <Image src="/tecon.png" width={90} height={100} alt="bluelearn" className='grayscale object-cover' />
-                </Card>
-                <h2 className='text-3xl md:text-4xl hidden lg:block font-bold text-gray-600'>Trusted by world class AI teams</h2>
-                <Card className='w-[90px] lg:w-[110px] lg:h-[80px]'>
-                    <Image src="/mastercard.svg" width={150} height={100} alt="bluelearn" className='grayscale ' />
-                </Card>
-            </div>
-        </section>
+        </div>
     )
 }
 

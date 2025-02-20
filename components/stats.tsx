@@ -3,36 +3,37 @@ import Image from 'next/image'
 export const Stats = () => {
     return (
         <section className='py-10 lg:pt-20 lg:pb-0'>
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10  lg:gap-20">
-                <div>
-                    <h2 className='text-4xl font-bold tracking-tighter  md:text-6xl'>
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10  lg:gap-20">
+                <div className='w-full space-y-6'>
+                    <h2 className='text-5xl text-center lg:text-left font-bold tracking-tighter  md:text-6xl lg:text-[6.5rem]'>
                         Why Do AI SEO
                     </h2>
+                    <p className='md:text-xl text-center lg:text-left text-gray-500 lg:ml-4'>
+                        Data proves it—AI search is not the future, it&apos;s already here.
+                    </p>
                 </div>
-                <div className='flex items-center flex-col gap-6'>
+                <div className='flex items-center flex-col gap-6 '>
                     <div className='flex items-center'>
-                        <div className='size-[60px] md:size-[100px]'>
+                        <div className='size-[60px] md:size-[80px]'>
                             <Image src="/perplexity.png" width={100} height={100} alt="perplexity" />
                         </div>
-                        <div className='-ml-2 md:-ml-3 size-[60px] md:size-[100px]'>
-                            <Image src="/chatgpt.png" width={100} height={100} alt="chatgpt" className='rounded-xl md:rounded-3xl' />
+                        <div className='-ml-2 md:-ml-3 size-[60px] md:size-[80px]'>
+                            <Image src="/chatgpt.png" width={100} height={100} alt="chatgpt" className='rounded-xl md:rounded-2xl' />
                         </div>
-                        <div className='bg-gray-100 rounded-xl md:rounded-3xl p-2 size-[60px] md:size-[100px] -ml-2 md:-ml-3'>
+                        <div className='bg-gray-100 rounded-xl md:rounded-2xl p-2 size-[60px] md:size-[80px] -ml-2 md:-ml-3'>
                             <Image src="/gemini.png" width={80} height={80} alt="gemini" />
                         </div>
-                        <div className='bg-gray-200 rounded-xl md:rounded-3xl p-2 size-[60px] md:size-[100px] -ml-2 md:-ml-3'>
+                        <div className='bg-gray-200 rounded-xl md:rounded-2xl p-2 size-[60px] md:size-[80px] -ml-2 md:-ml-3'>
                             <Image src="/azure.png" width={80} height={80} alt="azure" />
                         </div>
-                        <div className='bg-gray-300 rounded-xl md:rounded-3xl p-2 size-[60px] md:size-[100px] -ml-2 md:-ml-3'>
+                        <div className='bg-gray-300 rounded-xl md:rounded-2xl p-2 size-[60px] md:size-[80px] -ml-2 md:-ml-3'>
                             <Image src="/anthropic.png" width={80} height={80} alt="anthropic" />
                         </div>
-                        <div className='bg-gray-200 rounded-xl md:rounded-3xl p-2 size-[60px] md:size-[100px] flex items-center justify-center -ml-2 md:-ml-3'>
+                        <div className='bg-gray-200 rounded-xl md:rounded-2xl p-2 size-[60px] md:size-[80px] flex items-center justify-center -ml-2 md:-ml-3'>
                             <Image src="/amazon.png" width={100} height={120} alt="amazon" />
                         </div>
                     </div>
-                    <p className='text-center md:text-xl text-gray-500'>
-                        Data proves it—AI search is not the future, it&apos;s already here.
-                    </p>
+
                 </div>
             </div>
             <div className='flex flex-col md:flex-row items-center justify-around gap-6 lg:gap-10 mt-10 max-w-5xl mx-auto'>
