@@ -18,7 +18,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Varnan",
-  description: "Varnan",
+  description: "Varnan elevates your startup in AI search, making your content stand out to ChatGPT, Perplexity, and LLMs.",
+  openGraph: {
+    title: "Varnan",
+    description: "Varnan elevates your startup in AI search, making your content stand out to ChatGPT, Perplexity, and LLMs.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
