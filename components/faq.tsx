@@ -26,7 +26,7 @@ export const Faq = () => {
         <section className="container mx-auto py-10 px-5">
             <div className="text-center mb-12">
                 <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium rounded-full bg-gray-100">FAQ</span>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Frequently asked questions</h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight capitalize">Frequently asked questions</h2>
             </div>
             <div className="max-w-4xl mx-auto">
 
