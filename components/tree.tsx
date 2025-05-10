@@ -34,7 +34,7 @@ const rightNodes = [
 ];
 
 export const MaterialFanOutDiagram = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef(null);
   const rightCardRefs = useRef(rightNodes.map(() => React.createRef()));
   const [width, setWidth] = useState(0);
