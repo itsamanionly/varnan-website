@@ -7,21 +7,23 @@ const CARD_WIDTH = 380;
 const CARD_HEIGHT = 120;
 const VERTICAL_GAP = 24;
 
-const rightNodes = [
+type RightNode = {
+  label: string;
+  description: string;
+};
+
+const rightNodes: RightNode[] = [
   {
     label: "Positioning & Narrative Building:",
-    description:
-      "Crafting compelling stories that resonate with your target audience.",
+    description: "Crafting compelling stories that resonate with your target audience.",
   },
   {
     label: "Content Marketing:",
-    description:
-      "Developing engaging content across blogs, social media, and explainer videos.",
+    description: "Developing engaging content across blogs, social media, and explainer videos.",
   },
   {
     label: "User Acquisition Strategy:",
-    description:
-      "Designing and executing campaigns to attract and retain users.",
+    description: "Designing and executing campaigns to attract and retain users.",
   },
   {
     label: "Community Growth & Developer Marketing:",
@@ -33,11 +35,11 @@ const rightNodes = [
   },
 ];
 
-export const MaterialFanOutDiagram = () => {
+export const MaterialFanOutDiagram: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const leftCardRef = useRef(null);
-  const rightCardRefs = useRef(rightNodes.map(() => React.createRef()));
-  const [width, setWidth] = useState(0);
+  const leftCardRef = useRef<HTMLDivElement | null>(null);
+  const rightCardRefs = rightNodes.map(() => useRef<HTMLDivElement>(null)); 
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
     const updateWidth = () => {
@@ -57,7 +59,11 @@ export const MaterialFanOutDiagram = () => {
 
   if (isMobile) {
     return (
-      <div ref={containerRef} suppressHydrationWarning={true} className="flex flex-col items-center space-y-6 py-8 px-4">
+      <div
+        ref={containerRef}
+        suppressHydrationWarning={true}
+        className="flex flex-col items-center space-y-6 py-8 px-4"
+      >
         <div className="w-full max-w-md rounded-2xl shadow-lg bg-white p-6 text-center border-2 border-gray-300">
           <h2 className="text-balance font-semibold tracking-tighter">Varnan</h2>
         </div>
@@ -101,7 +107,7 @@ export const MaterialFanOutDiagram = () => {
         return (
           <div
             key={label}
-            ref={rightCardRefs.current[i]}
+            ref={rightCardRefs[i]}
             className="absolute bg-white rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer px-6 py-4 border-2 border-gray-200"
             style={{
               width: CARD_WIDTH,
@@ -116,8 +122,7 @@ export const MaterialFanOutDiagram = () => {
         );
       })}
 
-      {/* Animated Beams */}
-      {rightCardRefs.current.map((rightCardRef, i) => (
+      {rightCardRefs.map((rightCardRef, i) => (
         <AnimatedBeam
           key={i}
           containerRef={containerRef}
