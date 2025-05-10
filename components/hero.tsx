@@ -4,11 +4,11 @@ export const Hero = () => {
     return (
         <section className='pt-10 lg:pt-28'>
             <h1 className="text-balance z-50 text-center text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl ">
-                Go Beyond Google.
+                You Build the AI
                 <br className="block " />
-                Win AI {" "}
+                We Launch it to the {" "}
                 <span className="inline-flex overflow-hidden relative bg-white py-3 mt-1.5 px-1">
-                    <span className="gradient-text">Search.</span>
+                    <span className="gradient-text">World.</span>
                     <div className="aurora absolute inset-0 pointer-events-none mix-blend-lighten opacity-50">
                         <div
                             className="aurora__item absolute w-[60vw] h-[60vw]"
@@ -66,7 +66,7 @@ export const Hero = () => {
                 </span>
             </h1>
             <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium text-center py-4">
-                Varnan elevates your startup in AI search, making your content stand out to ChatGPT, Perplexity, and LLMs.
+                Varnan specializes in GTM strategies tailored for early-stage AI startups, ensuring your innovation reaches its full potential.
             </p>
         </section>
     )

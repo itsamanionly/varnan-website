@@ -14,20 +14,17 @@ export const Testimonials = () => {
                         <Image src="/tipsy-1.jpg" width={180} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
                     </Card>
                     <Card className='w-[130px] lg:w-[230px] lg:h-[90px] bg-white drop-shadow-sm'>
-                        <Image src="/hsbc.png" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
+                        <Image src="/athina-ai.png" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
                     </Card>
                     <Card className='w-[90px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
-                        <Image src="/iffort-1.png" width={150} height={100} alt="bluelearn" className='grayscale object-cover' />
+                        <Image src="/unify-ai.svg" width={150} height={100} alt="bluelearn" className='grayscale object-cover' />
                     </Card>
                 </div>
-                <div className='flex items-center lg:max-w-[70%]  mx-auto  justify-center lg:justify-between lg:px-8 flex-grow flex-wrap gap-4 lg:gap-10'>
-                    <Card className='w-[90px] lg:w-[100px] lg:h-[80px] bg-white drop-shadow-sm'>
-                        <Image src="/tecon.png" width={90} height={100} alt="bluelearn" className='grayscale object-cover' />
-                    </Card>
+                <div className='flex items-center lg:max-w-[70%]  mx-auto  justify-center lg:justify-center lg:px-8 flex-grow flex-wrap gap-4 lg:gap-10'>
                     <h2 className='text-3xl md:text-4xl hidden lg:block font-medium text-gray-600'>Trusted by world class AI teams</h2>
-                    <Card className='w-[90px] lg:w-[110px] lg:h-[80px] bg-white drop-shadow-sm'>
+                    {/* <Card className='w-[90px] lg:w-[110px] lg:h-[80px] bg-white drop-shadow-sm'>
                         <Image src="/mastercard.svg" width={150} height={100} alt="bluelearn" className='grayscale ' />
-                    </Card>
+                    </Card> */}
                 </div>
             </div>
         </div>

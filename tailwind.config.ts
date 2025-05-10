@@ -12,6 +12,17 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true, // Optional: centers the container
+      padding: '1rem', // Optional: adds horizontal padding
+      screens: {
+        sm: '600px',
+        md: '728px',
+        lg: '984px',
+        xl: '1100px',
+        '2xl': '1440px', // You can customize this to whatever you want
+      },
+    },
     extend: {
       fontFamily: {
         readex: "var(--font-readex)",

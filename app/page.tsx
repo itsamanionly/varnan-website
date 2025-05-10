@@ -5,7 +5,7 @@ import { Hero } from '@/components/hero'
 import { Navbar } from '@/components/navbar'
 import { Stats } from '@/components/stats'
 import { Testimonials } from '@/components/testimonials'
-import { Video } from '@/components/video'
+import {MaterialFanOutDiagram} from '@/components/tree'
 import React from 'react'
 
 const HomePage = () => {
@@ -15,7 +15,7 @@ const HomePage = () => {
         <Navbar />
         <Hero />
         <Testimonials />
-        <Video />
+        <MaterialFanOutDiagram />
         <Stats />
       </div>
       <Contact />

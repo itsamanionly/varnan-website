@@ -2,23 +2,23 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const data = [
     {
         id: 1,
-        question: "What is your return policy?",
-        answer: "We offer a 30-day return policy for all unused items in their original packaging. Simply contact our customer service team to initiate the return process."
+        question: "What types of AI startups do you work with?",
+        answer: "We specialize in partnering with early-stage AI startups, typically with teams of 2–6 members, focusing on bringing their innovative products to market."
     },
     {
         id: 2,
-        question: "What is your refund policy?",
-        answer: "We offer a 30-day return policy for all unused items in their original packaging. Simply contact our customer service team to initiate the return process."
+        question: "How do you tailor your GTM strategies?",
+        answer: "Our approach is customized to each startup's unique needs, considering factors like target audience, product offerings, and market dynamics."
     },
     {
         id: 3,
-        question: "What is your cancellation policy?",
-        answer: "We offer a 30-day return policy for all unused items in their original packaging. Simply contact our customer service team to initiate the return process."
+        question: "What is your pricing model?",
+        answer: "We offer a monthly retainer-based model with tiered pricing based on the scope of services, and optional performance-based bonuses tied to traction milestones."
     },
     {
         id: 4,
-        question: "What is your shipping policy?",
-        answer: "We offer a 30-day return policy for all unused items in their original packaging. Simply contact our customer service team to initiate the return process."
+        question: "How quickly can we see results?",
+        answer: "While timelines vary, our clients often begin to see measurable improvements in user engagement and acquisition within the first few months."
     },
 ]
 export const Faq = () => {
