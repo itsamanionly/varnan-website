@@ -204,7 +204,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [updatePath]);
+  }, [updatePath, containerRef, fromRef, toRef]);
 
   // Calculate gradient position for animation
   const getGradientPosition = () => {

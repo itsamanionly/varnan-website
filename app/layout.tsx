@@ -19,10 +19,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://varnan.tech'),
   title: "Varnan",
-  description: "Varnan elevates your startup in AI search, making your content stand out to ChatGPT, Perplexity, and LLMs.",
+  description: "Varnan specializes in GTM strategies tailored for early-stage AI startups, ensuring your innovation reaches its full potential.",
   openGraph: {
     title: "Varnan",
-    description: "Varnan elevates your startup in AI search, making your content stand out to ChatGPT, Perplexity, and LLMs.",
+    description: "Varnan specializes in GTM strategies tailored for early-stage AI startups, ensuring your innovation reaches its full potential.",
     images: ["/opengraph-image.png"],
   },
 };

@@ -105,7 +105,7 @@ export const MaterialFanOutDiagram: React.FC = () => {
           top: leftY,
         }}
       >
-        <h2 className="text-3xl font-semibold">Service Highlights:</h2>
+        <h2 className="text-3xl font-semibold">Varnan</h2>
       </div>
 
       {rightNodes.map(({ label, description }, i) => {
