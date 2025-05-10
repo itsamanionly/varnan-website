@@ -57,7 +57,7 @@ export const MaterialFanOutDiagram = () => {
 
   if (isMobile) {
     return (
-      <div ref={containerRef} className="flex flex-col items-center space-y-6 py-8 px-4">
+      <div ref={containerRef} suppressHydrationWarning={true} className="flex flex-col items-center space-y-6 py-8 px-4">
         <div className="w-full max-w-md rounded-2xl shadow-lg bg-white p-6 text-center border-2 border-gray-300">
           <h2 className="text-balance font-semibold tracking-tighter">Varnan</h2>
         </div>
