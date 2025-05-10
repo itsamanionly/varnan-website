@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 :root {
   --color-1: #810CA8;
   --color-2: #003092;
@@ -12,15 +9,8 @@
   --color-4: #D89216;
   --color-5: #7D0633;
 }
+
 .gradient-text {
-  /* background: linear-gradient(
-    270deg,
-    #ff6b6b,
-    #feca57,
-    #48dbfb,
-    #ff9ff3,
-    #54a0ff
-  ); */
   background: linear-gradient(
     250deg,
     #810CA8,
@@ -28,7 +18,6 @@
     #F05454,
     #D89216,
     #7D0633
-    
   );
   background-size: 1000% 1000%;
   -webkit-background-clip: text;
@@ -36,11 +25,13 @@
   color: transparent;
   animation: gradient-animation 15s ease infinite;
 }
+
 @keyframes gradient-animation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 @keyframes aurora-border {
   0% { border-radius: 57% 43% 70% 30% / 75% 69% 31% 25%; }
   100% { border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; }
@@ -69,4 +60,36 @@
 @keyframes aurora-5 {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(30%, 30%) scale(1.1); }
+}
+
+.animated-border {
+  position: relative;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px; 
+  padding: 2px;
+  background: linear-gradient(90deg, #333 50%, transparent 50%);
+  background-size: 200% 100%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-animate 4s linear infinite;
+}
+
+@keyframes border-animate {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
 }
