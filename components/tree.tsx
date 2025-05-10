@@ -36,10 +36,15 @@ const rightNodes: RightNode[] = [
 ];
 
 export const MaterialFanOutDiagram: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const leftCardRef = useRef<HTMLDivElement | null>(null);
-  const rightCardRefs = rightNodes.map(() => useRef<HTMLDivElement>(null)); 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const leftCardRef = useRef<HTMLDivElement>(null);
+  const rightCardRefs = useRef<React.RefObject<HTMLDivElement | null>[]>([]);
   const [width, setWidth] = useState<number>(0);
+
+  // Initialize rightCardRefs on first render
+  useEffect(() => {
+  rightCardRefs.current = rightNodes.map(() => React.createRef<HTMLDivElement>());
+}, []);
 
   useEffect(() => {
     const updateWidth = () => {
@@ -52,8 +57,7 @@ export const MaterialFanOutDiagram: React.FC = () => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  const totalHeight =
-    rightNodes.length * CARD_HEIGHT + (rightNodes.length - 1) * VERTICAL_GAP;
+  const totalHeight = rightNodes.length * CARD_HEIGHT + (rightNodes.length - 1) * VERTICAL_GAP;
   const leftY = totalHeight / 2 - CARD_HEIGHT / 2;
   const isMobile = width < 768;
 
@@ -72,7 +76,9 @@ export const MaterialFanOutDiagram: React.FC = () => {
             key={label}
             className="w-full max-w-md bg-white rounded-2xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-gray-200"
           >
-            <h3 className="text-base font-semibold mb-1 leading-snug break-words text-balance">{label}</h3>
+            <h3 className="text-base font-semibold mb-1 leading-snug break-words text-balance">
+              {label}
+            </h3>
             <p className="text-sm text-gray-600">{description}</p>
           </div>
         ))}
@@ -104,10 +110,11 @@ export const MaterialFanOutDiagram: React.FC = () => {
 
       {rightNodes.map(({ label, description }, i) => {
         const top = i * (CARD_HEIGHT + VERTICAL_GAP);
+        const ref = rightCardRefs.current[i];
         return (
           <div
             key={label}
-            ref={rightCardRefs[i]}
+            ref={ref}
             className="absolute bg-white rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer px-6 py-4 border-2 border-gray-200"
             style={{
               width: CARD_WIDTH,
@@ -122,12 +129,12 @@ export const MaterialFanOutDiagram: React.FC = () => {
         );
       })}
 
-      {rightCardRefs.map((rightCardRef, i) => (
+      {rightCardRefs.current.map((ref, i) => (
         <AnimatedBeam
           key={i}
           containerRef={containerRef}
           fromRef={leftCardRef}
-          toRef={rightCardRef}
+          toRef={ref}
           curvature={100}
           pathColor="#c6c9cc"
           pathWidth={3}
