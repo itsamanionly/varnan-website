@@ -34,7 +34,7 @@ export const Faq = () => {
                     {
                         data && data.map((item) => (
                             <AccordionItem key={item.id} value={"item-" + item.id} className="border rounded-lg px-4">
-                                <AccordionTrigger className="text-lg font-medium hover:no-underline">
+                                <AccordionTrigger className="text-lg text-left font-medium hover:no-underline">
                                     {item.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-gray-600">

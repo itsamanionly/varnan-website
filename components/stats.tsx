@@ -5,11 +5,11 @@ export const Stats = () => {
         <section className='py-10 lg:pt-20 lg:pb-0'>
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10  lg:gap-20">
                 <div className='w-full space-y-6'>
-                    <h2 className='text-5xl text-center lg:text-left font-bold tracking-tighter  md:text-6xl lg:text-[6rem]'>
+                    <h2 className='text-5xl text-center lg:text-left font-bold tracking-tighter md:text-5xl lg:text-[5.5rem]'>
                         Why GTM is Crucial for AI Startups
                     </h2>
                     <p className='md:text-xl text-center lg:text-left text-gray-500 lg:ml-4'>
-                        Data proves it—AI search is not the future, it&apos;s already here.
+                        Data proves it — strong GTM outperforms great tech, every time.
                     </p>
                 </div>
                 <div className='flex items-center flex-col gap-6 '>
@@ -52,14 +52,14 @@ export const Stats = () => {
                 </div>
             </div>
             <div className='flex flex-col md:flex-row items-center justify-around gap-6 lg:gap-10 mt-6 lg:mt-10 max-w-5xl mx-auto'>
-                <div className='w-full md:w-[40%] group hover:scale-[1.02] hover:bg-black hover:drop-shadow hover:text-white transition duration-300 ease-in-out text-center h-52 flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-300 shadow'>
+                <div className='w-full md:w-[45%] group hover:scale-[1.02] hover:bg-black hover:drop-shadow hover:text-white transition duration-300 ease-in-out text-center h-52 flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-300 shadow'>
                     <h3 className='text-2xl font-semibold'>
                          GTM Budget Fuels Growth
                     </h3>
                     <h2 className=' text-6xl font-semibold'>2.5x</h2>
                     <p className='text-gray-500 text-base group-hover:text-white'>likely to scale if over 20% of budget goes to marketing.</p>
                 </div>
-                <div className='w-full md:w-[60%] group hover:scale-[1.02] hover:bg-black hover:drop-shadow hover:text-white transition duration-300 ease-in-out text-center h-52 flex flex-col items-center justify-center gap-2 rounded-lg shadow border  border-gray-300'>
+                <div className='w-full md:w-[55%] group hover:scale-[1.02] hover:bg-black hover:drop-shadow hover:text-white transition duration-300 ease-in-out text-center h-52 flex flex-col items-center justify-center gap-2 rounded-lg shadow border  border-gray-300'>
                     <h3 className='text-2xl font-semibold text-center'>Zero-Click Searches Hurt Businesses
                     </h3>
                     <h2 className=' text-6xl font-semibold'>65%</h2>

@@ -14,24 +14,29 @@ type RightNode = {
 
 const rightNodes: RightNode[] = [
   {
-    label: "Positioning & Narrative Building:",
-    description: "Crafting compelling stories that resonate with your target audience.",
+    label: "Positioning & Narrative Building",
+    description:
+      "We turn your technical edge into a clear, compelling story your users (and investors) understand - fast.",
   },
   {
-    label: "Content Marketing:",
-    description: "Developing engaging content across blogs, social media, and explainer videos.",
+    label: "Content and Distribution",
+    description:
+      "From explainers to founder-driven posts, we create content loops that drive awareness, trust, and signups.",
   },
   {
-    label: "User Acquisition Strategy:",
-    description: "Designing and executing campaigns to attract and retain users.",
+    label: "Precise User Acquisition",
+    description:
+      "No broad targeting, We help you zero in on the ICP that will grow with you and convert.",
   },
   {
-    label: "Community Growth & Developer Marketing:",
-    description: "Building vibrant communities around your product.",
+    label: "Community Growth & Marketing",
+    description:
+      "We design and run early growth experiments to find what moves the needle.",
   },
   {
-    label: "Product-Market Fit Advisory:",
-    description: "Guiding you to align your product with market needs.",
+    label: "Product-Market Fit Signalling",
+    description:
+      "We help you track the right GTM metrics so you can iterate quickly and prove traction before you run out of runway.",
   },
 ];
 
@@ -39,12 +44,18 @@ export const Tree: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);
   const rightCardRefs = useRef<React.RefObject<HTMLDivElement | null>[]>([]);
+  const mobileFeatureRefs = useRef<React.RefObject<HTMLDivElement | null>[]>([]);
   const [width, setWidth] = useState<number>(0);
 
-  // Initialize rightCardRefs on first render
+  // Initialize refs on first render
   useEffect(() => {
-  rightCardRefs.current = rightNodes.map(() => React.createRef<HTMLDivElement>());
-}, []);
+    rightCardRefs.current = rightNodes.map(() =>
+      React.createRef<HTMLDivElement>()
+    );
+    mobileFeatureRefs.current = rightNodes.map(() =>
+      React.createRef<HTMLDivElement>()
+    );
+  }, []);
 
   useEffect(() => {
     const updateWidth = () => {
@@ -57,37 +68,49 @@ export const Tree: React.FC = () => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  const totalHeight = rightNodes.length * CARD_HEIGHT + (rightNodes.length - 1) * VERTICAL_GAP;
+  const totalHeight =
+    rightNodes.length * CARD_HEIGHT + (rightNodes.length - 1) * VERTICAL_GAP;
   const leftY = totalHeight / 2 - CARD_HEIGHT / 2;
   const isMobile = width < 768;
+
+  const LEFT_X = (width - CARD_WIDTH * 2 - 200) / 2;
+  const RIGHT_X = LEFT_X + CARD_WIDTH + 200;
 
   if (isMobile) {
     return (
       <div
         ref={containerRef}
         suppressHydrationWarning={true}
-        className="flex flex-col items-center space-y-6 py-8 px-4"
+        className="flex flex-col items-center space-y-6 py-8 px-4 relative"
       >
+        {/* Varnan header card - no connections to this */}
         <div className="w-full max-w-md rounded-2xl shadow-lg bg-white p-6 text-center border-2 border-gray-300">
-          <h2 className="text-balance text-3xl font-semibold leading-none tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl ">Varnan</h2>
+          <h2 className="text-balance text-3xl font-semibold leading-none tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+            Varnan
+          </h2>
         </div>
-        {rightNodes.map(({ label, description }) => (
+        
+        {/* Feature cards with references for connections */}
+        {rightNodes.map(({ label, description }, index) => (
           <div
             key={label}
-            className="w-full max-w-md bg-white rounded-2xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-gray-200"
+            ref={mobileFeatureRefs.current[index]}
+            className="w-full max-w-md bg-white rounded-2xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-gray-200 relative"
           >
-            <h3 className="text-base font-semibold mb-1 leading-snug break-words text-balance">
+            <h3 className="text-base font-semibold mb-1 break-words text-balance text-center">
               {label}
             </h3>
-            <p className="text-sm text-gray-600">{description}</p>
+            <p className="text-sm text-gray-600 text-center">{description}</p>
+            
+            {/* Add direct SVG connection line to next card (except last card) */}
+            {index < rightNodes.length - 1 && (
+              <div className="absolute left-1/2 bottom-0 h-6 bg-gray-500" style={{ transform: 'translateX(-50%)', bottom: '-26px',  width: '2px'}} />
+            )}
           </div>
         ))}
       </div>
     );
   }
-
-  const LEFT_X = (width - CARD_WIDTH * 2 - 200) / 2;
-  const RIGHT_X = LEFT_X + CARD_WIDTH + 200;
 
   return (
     <div
@@ -105,7 +128,7 @@ export const Tree: React.FC = () => {
           top: leftY,
         }}
       >
-        <h2 className="text-3xl font-semibold">Varnan</h2>
+        <h2 className="text-4xl font-semibold">Varnan</h2>
       </div>
 
       {rightNodes.map(({ label, description }, i) => {
@@ -123,8 +146,8 @@ export const Tree: React.FC = () => {
               top,
             }}
           >
-            <h3 className="text-lg font-semibold mb-2">{label}</h3>
-            <p className="text-sm text-gray-600">{description}</p>
+            <h3 className="text-lg font-semibold text-center">{label}</h3>
+            <p className="text-sm text-gray-600 text-center">{description}</p>
           </div>
         );
       })}
