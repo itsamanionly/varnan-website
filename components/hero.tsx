@@ -7,7 +7,7 @@ export const Hero = () => {
                 You Build the AI
                 <br className="block " />
                 We Launch it to the {" "}
-                <span className="inline-flex overflow-hidden relative bg-white py-3 mt-1.5 px-1">
+                <span className="inline-flex overflow-hidden relative bg-white mt-1.5 px-1">
                     <span className="gradient-text">World.</span>
                     <div className="aurora absolute inset-0 pointer-events-none mix-blend-lighten opacity-50">
                         <div

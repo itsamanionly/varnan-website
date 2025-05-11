@@ -11,13 +11,13 @@ export const Testimonials = () => {
                 <h2 className='text-2xl md:text-4xl text-center lg:hidden font-bold text-gray-700'>Trusted by world class AI teams</h2>
                 <div className='flex items-center lg:max-w-[70%] mt-10 lg:mt-0 mx-auto justify-center mb-4 lg:mb-10 lg:px-8 gap-4  lg:gap-10'>
                     <Card className='w-[130px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
-                        <Image src="/tipsy-1.jpg" width={180} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
+                        <Image src="/tipsy-1.jpg" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
                     </Card>
-                    <Card className='w-[130px] lg:w-[230px] lg:h-[90px] bg-white drop-shadow-sm'>
-                        <Image src="/athina-ai.png" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
+                    <Card className='w-[130px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
+                        <Image src="/athina-ai.png" width={150} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
                     </Card>
-                    <Card className='w-[90px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
-                        <Image src="/unify-ai.svg" width={150} height={100} alt="bluelearn" className='grayscale object-cover' />
+                    <Card className='w-[130px] lg:w-[250px] lg:h-[90px] bg-white drop-shadow-sm'>
+                        <Image src="/unify-ai.svg" width={120} height={100} alt="bluelearn" className='grayscale object-cover w-full' />
                     </Card>
                 </div>
                 <div className='flex items-center lg:max-w-[70%]  mx-auto  justify-center lg:justify-center lg:px-8 flex-grow flex-wrap gap-4 lg:gap-10'>

@@ -35,7 +35,7 @@ const rightNodes: RightNode[] = [
   },
 ];
 
-export const MaterialFanOutDiagram: React.FC = () => {
+export const Tree: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const leftCardRef = useRef<HTMLDivElement>(null);
   const rightCardRefs = useRef<React.RefObject<HTMLDivElement | null>[]>([]);
@@ -69,7 +69,7 @@ export const MaterialFanOutDiagram: React.FC = () => {
         className="flex flex-col items-center space-y-6 py-8 px-4"
       >
         <div className="w-full max-w-md rounded-2xl shadow-lg bg-white p-6 text-center border-2 border-gray-300">
-          <h2 className="text-balance font-semibold tracking-tighter">Varnan</h2>
+          <h2 className="text-balance text-3xl font-semibold leading-none tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl ">Varnan</h2>
         </div>
         {rightNodes.map(({ label, description }) => (
           <div
@@ -97,7 +97,7 @@ export const MaterialFanOutDiagram: React.FC = () => {
     >
       <div
         ref={leftCardRef}
-        className="absolute flex items-center justify-center rounded-2xl shadow-lg bg-white px-6 text-center border-2 border-gray-200"
+        className="absolute flex items-center justify-center rounded-2xl shadow-lg hover:shadow-xl transition-all bg-white px-6 text-center border-2 border-gray-200"
         style={{
           width: CARD_WIDTH,
           minHeight: CARD_HEIGHT,
@@ -115,7 +115,7 @@ export const MaterialFanOutDiagram: React.FC = () => {
           <div
             key={label}
             ref={ref}
-            className="absolute bg-white rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer px-6 py-4 border-2 border-gray-200"
+            className="absolute bg-white rounded-2xl shadow-md hover:shadow-xl transition-all px-6 py-4 border-2 border-gray-200"
             style={{
               width: CARD_WIDTH,
               height: CARD_HEIGHT,
@@ -138,7 +138,7 @@ export const MaterialFanOutDiagram: React.FC = () => {
           curvature={100}
           pathColor="#c6c9cc"
           pathWidth={3}
-          pathOpacity={0.3}
+          pathOpacity={0.5}
           gradientStartColor="#000"
           gradientStopColor="#000"
           delay={i * 0.2}
