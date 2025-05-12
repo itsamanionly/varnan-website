@@ -116,7 +116,7 @@ export const Tree: React.FC = () => {
     <div
       ref={containerRef}
       className="relative w-full overflow-hidden"
-      style={{ height: totalHeight }}
+      style={{ height: `calc(${totalHeight}px + 20px)` }}
     >
       <div
         ref={leftCardRef}

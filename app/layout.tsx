@@ -25,7 +25,11 @@ export const metadata: Metadata = {
     description: "Varnan specializes in GTM strategies tailored for early-stage AI startups, ensuring your innovation reaches its full potential.",
     images: ["/opengraph-image.png"],
   },
+  icons: {
+    icon: '/favicon.ico', 
+  },
 };
+
 
 export default function RootLayout({
   children,
