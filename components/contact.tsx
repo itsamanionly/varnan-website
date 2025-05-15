@@ -11,7 +11,7 @@ export const Contact = () => {
                     <h2 className='text-2xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-center'> Your Product Leads the Future. <br/> We&apos;ll Get it Discovered
                     </h2>
                     <div className=" flex items-center justify-center mt-4">
-                        <Link href="/">
+                        <Link href="https://calendly.com/varnan-discovery-call/30min">
                             <button
                                 className="bg-gradient-to-br w-fit px-4 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800  text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                                 type="submit"
