@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Readex_Pro } from "next/font/google";
+import { Geist, Geist_Mono, Readex_Pro, Merriweather  } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +14,12 @@ const readex = Readex_Pro({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"], // Medium uses bold weights too
+  style: ["normal", "italic"],         // Optional but improves aesthetics
 });
 
 export const metadata: Metadata = {
@@ -39,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" color-scheme="light" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${readex.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${readex.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
       >
         {children}
       </body>

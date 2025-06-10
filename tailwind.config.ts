@@ -1,10 +1,13 @@
 import type { Config } from "tailwindcss";
 const svgToDataUri = require("mini-svg-data-uri");
-
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
+
+// ✅ ADD typography plugin
+const typography = require("@tailwindcss/typography");
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,19 +16,20 @@ export default {
   ],
   theme: {
     container: {
-      center: true, // Optional: centers the container
-      padding: '1rem', // Optional: adds horizontal padding
+      center: true,
+      padding: '1rem',
       screens: {
         sm: '600px',
         md: '728px',
         lg: '984px',
         xl: '1100px',
-        '2xl': '1440px', // You can customize this to whatever you want
+        '2xl': '1440px',
       },
     },
     extend: {
       fontFamily: {
         readex: "var(--font-readex)",
+        merri: "var(--font-merriweather)",
       },
       colors: {
         background: "var(--background)",
@@ -45,9 +49,45 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      // ✅ Add Medium-style prose overrides
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#292929",
+            a: {
+              color: "#1a8917",
+              textDecoration: "none",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            },
+            strong: { color: "#111" },
+            h1: { fontWeight: "700", fontSize: "2.25rem" },
+            h2: { fontWeight: "700", fontSize: "1.75rem" },
+            h3: { fontWeight: "600", fontSize: "1.5rem" },
+            blockquote: {
+              fontStyle: "italic",
+              color: "#555",
+              borderLeftColor: "#1a8917",
+              paddingLeft: "1rem",
+            },
+            img: {
+              borderRadius: "0.5rem",
+              margin: "1.5rem auto",
+            },
+            code: {
+              backgroundColor: "#f3f4f6",
+              padding: "0.2em 0.4em",
+              borderRadius: "0.3rem",
+              fontSize: "0.875em",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [
+    typography, // ✅ REGISTER the plugin
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
