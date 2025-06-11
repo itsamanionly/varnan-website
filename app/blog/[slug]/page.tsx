@@ -30,7 +30,7 @@ export default async function BlogPostPage(props: any) {
         <Navbar />
       </div>
       <article className="max-w-5xl mx-auto px-4 py-8 font-merri">
-        <h1 className="text-7xl font-extrabold mb-4 tracking-wider">{post.title}</h1>
+        <h1 className="font-extrabold mb-4 tracking-wider text-4xl md:text-7xl">{post.title}</h1>
         <p className="text-sm text-gray-500 mb-6">
           {new Date(post.pubDate).toDateString()}
         </p>
