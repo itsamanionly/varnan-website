@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Readex_Pro, Merriweather } from "next/font/google";
 import "./globals.css";
-// import Analytics from "@/lib/analytics";
-// import TrackingScripts from '@/components/trackingScripts';
+import Analytics from "@/lib/analytics";
+import TrackingScripts from '@/components/trackingScripts';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,8 +50,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${readex.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
       >
-        {/* <TrackingScripts />
-        <Analytics />  */}
+        <TrackingScripts />
+        <Analytics /> 
         {children}
       </body>
     </html>
