@@ -23,7 +23,7 @@ export const getMediumPosts = cache(async (): Promise<Post[]> => {
   const parser = new Parser({ customFields: { item: ["content:encoded"] } });
 
   try {
-    const feed = await parser.parseURL("https://medium.com/feed/@parasmadan.in");
+    const feed = await parser.parseURL("https://medium.com/feed/@varnan");
 
     return feed.items.map((item) => {
       const htmlContent = item["content:encoded"] ?? "";
