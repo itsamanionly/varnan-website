@@ -52,11 +52,11 @@ export default function RootLayout({
       >
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D74NB4RY4M"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -70,7 +70,7 @@ export default function RootLayout({
         />
         <Script
           id="leadfeeder"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
       (function(ss,ex){
