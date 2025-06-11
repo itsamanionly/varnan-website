@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Readex_Pro, Merriweather } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
-import Analytics from "@/lib/analytics";
+// import Script from "next/script";
+// import Analytics from "@/lib/analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
