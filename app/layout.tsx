@@ -50,7 +50,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${readex.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
       >
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D74NB4RY4M"
           strategy="lazyOnload"
         />
@@ -92,7 +92,7 @@ export default function RootLayout({
           }}
         />
 
-        <Analytics />
+        <Analytics /> */}
         {children}
       </body>
     </html>
