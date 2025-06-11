@@ -4,6 +4,8 @@ import Blogs from "@/components/blogs"; // adjust path if needed
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogsPage() {
   const posts = await getMediumPosts();
   return (
