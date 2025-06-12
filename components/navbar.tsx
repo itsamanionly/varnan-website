@@ -7,14 +7,14 @@ export const Navbar = () => {
       <nav className="flex justify-between px-3">
         <Logo />
         <div className="flex items-center gap-4 md:gap-8">
-          {/* <Link
-            className=" font-normal text-xl md:text-xl font-readex relative group/btn"
+          <Link
+            className=" font-normal text-md md:text-xl font-readex relative group/btn"
             type="submit"
             href={"/about-us"}
           >
             About Us
             <BottomGradient />
-          </Link> */}
+          </Link>
           <Link
             className=" font-normal text-md md:text-xl font-readex relative group/btn"
             type="submit"
