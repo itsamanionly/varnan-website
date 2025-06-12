@@ -79,21 +79,12 @@ export const OurTeam = () => {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-medium-icon lucide-medium"
+                    fill="currentColor"
+                    className="text-gray-800"
                   >
-                    <path d="M4 4l5 8 5-8" />
-                    <path d="M19 4h1v16h-1z" />
-                    <path d="M14 4h1v16h-1z" />
-                    <path d="M9 12l5 8" />
-                    <path d="M4 20l5-8" />
+                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z" />
                   </svg>
                 </Link>
-
                 <Link href={"https://parasmadan.in"}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,18 +105,19 @@ export const OurTeam = () => {
                   </svg>
                 </Link>
               </div>
-              
+
               <p className="text-sm md:text-base lg:text-lg text-justify md:text-justify">
-                Paras is a builder at heart — not just of products, but of
+                Paras is a builder at heart, not just of products, but of
                 momentum. With a strong technical background and deep experience
-                launching AI products, he’s seen the same story play out too
-                often: great tech, lost in translation. Having built and scaled
-                products to over a million users and worked with YC-backed
-                companies like Athena and Unify AI, Paras knows both the depth
-                of AI and the nuance of GTM. He also runs a thriving AI
-                community of 200K+ people, where he creates content that
-                simplifies complex ideas and drives real traction. He speaks
-                both code and customer — and that’s what sets him apart.
+                launching AI products, he&apos;s seen the same story play out
+                too often: great tech, lost in translation. Having built and
+                scaled products to over a million users and worked with
+                YC-backed AI first companies like Athina and Unify AI, Paras
+                knows both the depth of AI Tech and the nuance of GTM. He also
+                runs an AI community of 200K+ people, where he creates content
+                that simplifies complex ideas and drives real traction. He
+                speaks both code and customer and that&apos;s what sets him
+                apart.
               </p>
             </div>
           </div>
@@ -138,7 +130,7 @@ export const OurTeam = () => {
                 GTM Head
               </h5>
               <div className="flex gap-4 items-center">
-                <Link href={"https://www.linkedin.com/in/sam-josh-5b64521a2/"}>
+                {/* <Link href={"https://www.linkedin.com/in/sam-josh-5b64521a2/"}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -155,41 +147,32 @@ export const OurTeam = () => {
                     <rect width="4" height="12" x="2" y="9" />
                     <circle cx="4" cy="4" r="2" />
                   </svg>
-                </Link>
+                </Link> */}
                 <Link href={"https://www.reddit.com/user/Sam_Tech1/"}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-reddit-icon lucide-reddit"
+                    fill="currentColor"
+                    className="text-gray-800 "
                   >
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="9" cy="13" r="1" />
-                    <circle cx="15" cy="13" r="1" />
-                    <path d="M9 16c1.5 1 4.5 1 6 0" />
-                    <path d="m16.5 7.5 1.5-4 3 1" />
-                    <path d="M18.5 6.5c-.5-.5-1.5-.5-2.5 0" />
+                    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
                   </svg>
                 </Link>
               </div>
-              
+
               <p className="text-sm md:text-base lg:text-lg text-justify md:text-justify">
-                Sam is the kind of person who just gets what a product needs —
-                not just in theory, but in the wild. A Stanford grad in science
-                and tech, he’s been working alongside Paras for over four years,
-                from their first startup Crux to now building GTM engines that
-                actually move the needle. Sam brings a rare mix of deep product
-                sense, social media instinct, and sharp analytical thinking. He
-                understands how people think, what they click on, and why they
-                care. Whether it's picking the right channel or shaping the
-                perfect message, Sam has a psychological eye for detail — and
-                always finds the missing piece.
+                Sam is the kind of person who just gets what a product needs not
+                just in theory, but in the wild. A Stanford grad in science and
+                tech, he&apos;s been working alongside Paras for over four
+                years, from their first startup Cruxe to now building GTM
+                engines that actually move the needle. Sam brings a rare mix of
+                deep product sense, social media instinct, and sharp analytical
+                thinking. He understands how people think, what they click on,
+                and why they care. Whether it&apos;s picking the right channel or
+                shaping the perfect message, Sam has a psychological eye for
+                detail and always finds the missing piece.
               </p>
             </div>
             <div className="w-full md:w-[30%] group hover:scale-[1.02] hover:drop-shadow transition duration-300 ease-in-out text-center flex flex-col items-center justify-center gap-2 rounded-lg shadow-lg">
