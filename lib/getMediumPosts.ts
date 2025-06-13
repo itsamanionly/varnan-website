@@ -1,6 +1,6 @@
 // lib/getMediumPosts.ts
 import Parser from "rss-parser";
-import { cache } from "react";
+// import { cache } from "react";
 
 export type Post = {
   title: string;
@@ -19,7 +19,7 @@ function slugify(title: string): string {
     .replace(/ +/g, "-");
 }
 
-export const getMediumPosts = cache(async (): Promise<Post[]> => {
+export const getMediumPosts = async (): Promise<Post[]> => {
   const parser = new Parser({ customFields: { item: ["content:encoded"] } });
 
   try {
@@ -44,4 +44,4 @@ export const getMediumPosts = cache(async (): Promise<Post[]> => {
     console.error("Failed to fetch Medium feed:", err);
     return []; // fallback to empty list to avoid build failure
   }
-});
+};

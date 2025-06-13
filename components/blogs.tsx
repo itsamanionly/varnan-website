@@ -1,4 +1,4 @@
-// components/Blogs.tsx
+// components/blogs.tsx
 import Link from "next/link";
 import { Post } from "@/lib/getMediumPosts";
 
@@ -31,9 +31,9 @@ export default function Blogs({ posts }: BlogsProps) {
                     {post.title}
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-merri">
+                {/* <p className="text-gray-500 text-sm font-merri">
                   {new Date(post.pubDate).toDateString()}
-                </p>
+                </p> */}
                 <p className="mt-2 text-gray-700">{post.contentSnippet}</p>
               </div>
             </div>
