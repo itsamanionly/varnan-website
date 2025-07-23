@@ -66,7 +66,7 @@ export const Hero = () => {
                 </span>
             </h1>
             <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium text-center py-4">
-                Varnan specializes in Product Marketing strategies tailored for AI startups with early PMF, ensuring your innovation reaches its full potential.
+                Varnan specializes in Product Marketing and Distribution strategies tailored for AI startups with early PMF, ensuring your innovation reaches its full potential.
             </p>
         </section>
     )
