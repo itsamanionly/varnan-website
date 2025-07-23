@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Readex_Pro, Merriweather } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/lib/analytics";
-import TrackingScripts from '@/components/trackingScripts';
+import TrackingScripts from "@/components/trackingScripts";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,11 +49,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" color-scheme="light" suppressHydrationWarning>
+      <head>
+        <Script
+          id="leadfeeder"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(ss,ex){
+        window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};
+        (function(d,s){
+          var fs=d.getElementsByTagName(s)[0];
+          function ce(src){
+            var cs=d.createElement(s);
+            cs.src=src;
+            cs.async=1;
+            fs.parentNode.insertBefore(cs,fs);
+          };
+          ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');
+        })(document,'script');
+      })('lAxoEaKzo104OYGd');`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${readex.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
       >
         <TrackingScripts />
-        <Analytics /> 
+        <Analytics />
         {children}
       </body>
     </html>

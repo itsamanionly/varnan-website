@@ -20,32 +20,22 @@ export default function TrackingScripts() {
     `;
     document.head.appendChild(gtagInit);
 
-    (function (ss: string, ex?: string) {
-      (window as any).ldfdr =
-        (window as any).ldfdr ||
-        function (...args: any[]) {
-          ((window as any).ldfdr.q = (window as any).ldfdr.q || []).push(args);
-        };
-
-      (function (d: Document, s: string) {
-        const fs = d.getElementsByTagName(s)[0];
-        function ce(src: string) {
-          const cs = d.createElement(s) as HTMLScriptElement;
-          cs.src = src;
-          cs.async = true;
-          if (fs.parentNode) {
-            fs.parentNode.insertBefore(cs, fs);
-          }
-        }
-
-        ce(
-          "https://sc.lfeeder.com/lftracker_v1" +
-            ss +
-            (ex ? "_" + ex : "") +
-            ".js"
-        );
-      })(document, "script");
-    })("lYNOR8xxBxg8WQJZ");
+    // Leadfeeder
+    // (function (ss, ex) {
+    //   (window as any).ldfdr = (window as any).ldfdr || function () {
+    //     ((window as any).ldfdr.q = (window as any).ldfdr.q || []).push([].slice.call(arguments));
+    //   };
+    //   (function (d, s) {
+    //     const fs = d.getElementsByTagName(s)[0];
+    //     function ce(src: string) {
+    //       const cs = document.createElement(s) as HTMLScriptElement;
+    //       cs.src = src;
+    //       cs.async = true;
+    //       fs.parentNode?.insertBefore(cs, fs);
+    //     }
+    //     ce('https://sc.lfeeder.com/lftracker_v1/' + ss + (ex ? '_' + ex : '') + '.js');
+    //   })(document, 'script');
+    // })('lYNOR8xxBxg8WQJZ');
   }, []);
 
   return null;

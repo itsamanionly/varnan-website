@@ -2,23 +2,23 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const data = [
     {
         id: 1,
-        question: "What types of AI startups do you work with?",
-        answer: "We specialize in partnering with early-stage AI startups, typically with teams of 2–6 members, focusing on bringing their innovative products to market."
+        question: "What exactly does Varnan do for AI startups?",
+        answer: "We help AI startups launch and grow. That means defining clear positioning, writing technical content that earns trust, building distribution across Reddit, Hacker News, and LinkedIn, and driving user acquisition through repeatable growth loops."
     },
     {
         id: 2,
-        question: "How do you tailor your GTM strategies?",
-        answer: "Our approach is customized to each startup's unique needs, considering factors like target audience, product offerings, and market dynamics."
+        question: "What stage of startup do you work with?",
+        answer: "We work with seed to Series A Native AI startups that already have a working product and need traction."
     },
     {
         id: 3,
-        question: "What is your pricing model?",
-        answer: "We offer a monthly retainer-based model with tiered pricing based on the scope of services, and optional performance-based bonuses tied to traction milestones."
+        question: "Do you handle sales or book discovery calls?",
+        answer: "No. We focus on marketing and distribution, creating demand and awareness. Your team owns the sales conversations and closing."
     },
     {
         id: 4,
-        question: "How quickly can we see results?",
-        answer: "While timelines vary, our clients often begin to see measurable improvements in user engagement and acquisition within the first few months."
+        question: "How are you different from a marketing agency?",
+        answer: "We act like an embedded product marketing team, not a campaign vendor. No vanity metrics, no bloated retainers just impactful product launches, technical content, sharp positioning, and channels that compound over time."
     },
 ]
 export const Faq = () => {

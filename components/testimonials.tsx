@@ -76,7 +76,7 @@ export const Testimonials = () => {
                             width={150} 
                             height={100} 
                             alt="composio" 
-                            className='grayscale object-contain h-auto max-w-full max-h-full' 
+                            className='grayscale object-contain  h-auto max-w-full max-h-full' 
                         />
                     </Card>
                     <Card className='bg-white drop-shadow-sm'>
