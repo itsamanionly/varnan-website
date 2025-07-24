@@ -20,6 +20,11 @@ const data = [
         question: "How are you different from a marketing agency?",
         answer: "We act like an embedded product marketing team, not a campaign vendor. No vanity metrics, no bloated retainers just impactful product launches, technical content, sharp positioning, and channels that compound over time."
     },
+    {
+        id: 5,
+        question: "What makes your product marketing approach different from others?",
+        answer: "We’re a team of AI engineers first, marketers second. Every part of our workflow is powered by AI agents. It’s how we test faster, publish quicker, and scale your product marketing efforts without adding extra layers of people or delay."
+    },
 ]
 export const Faq = () => {
     return (
@@ -37,7 +42,7 @@ export const Faq = () => {
                                 <AccordionTrigger className="text-lg text-left font-medium hover:no-underline">
                                     {item.question}
                                 </AccordionTrigger>
-                                <AccordionContent className="text-gray-600">
+                                <AccordionContent className="text-gray-600 text-base">
                                     {item.answer}
                                 </AccordionContent>
                             </AccordionItem>
