@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="pt-10 lg:pt-28">
+    <section className="pt-10 lg:pt-24">
       <h1 className="text-balance z-50 text-center text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl ">
         You Build the AI
         <br className="block " />

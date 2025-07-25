@@ -78,7 +78,7 @@ export const Tree: React.FC = () => {
 
   if (isMobile) {
     return (
-      <div
+      <section
         ref={containerRef}
         suppressHydrationWarning={true}
         className="flex flex-col items-center space-y-6 py-8 px-4 relative"
@@ -108,15 +108,15 @@ export const Tree: React.FC = () => {
             )}
           </div>
         ))}
-      </div>
+      </section>
     );
   }
 
   return (
-    <div
+    <section
       ref={containerRef}
-      className="relative w-full overflow-hidden"
-      style={{ height: `calc(${totalHeight}px + 20px)` }}
+      className="relative w-full overflow-hidden py-8 px-4"
+      style={{ height: `calc(${totalHeight}px + 30px)` }}
     >
       <div
         ref={leftCardRef}
@@ -168,6 +168,6 @@ export const Tree: React.FC = () => {
           duration={3 + i * 0.5}
         />
       ))}
-    </div>
+    </section>
   );
 };
