@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/medium-feed',
-        destination: 'https://medium.com/feed/@varnan',
+        // Change the destination to the rss2json proxy URL
+        destination: 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@varnan',
       },
     ]
   },
