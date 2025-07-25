@@ -21,9 +21,9 @@ export const About = () => {
               What We Do
             </h2>
             <p className="text-lg text-justify lg:text-left py-[2rem] md:text-lg lg:text-lg">
-              At Varnan, we exist to make innovative and most impactful AI SaaS visible to the world. We partner with late early-stage AI startups and turn their raw technical genius into market-ready super products. From crafting the right positioning to unlocking precise user acquisition, we don’t follow any kind of available GTM templates, instead we make tailored growth engines for every startup we work with. 
+              At Varnan, we exist to help AI startups launch and grow. We partner with seed stage to Series A startup teams and turn raw technical brilliance into products people actually discover and adopt. From defining sharp positioning to building distribution across Reddit, Hacker News, LinkedIn and launching on Product Hunt, we don’t follow templates we design custom growth loops for every startup we work with.
               <br /><br />
-              In a world where attention is scarce and AI is booming, we make sure your innovation is not just another AI Product Hunt launch instead its a product that’s seen, heard, adopted, and scaled. We stand by one belief: Great products deserve great discovery. Let’s launch yours into the world.
+              We’re AI engineers first, marketers second. Every part of our process runs on our own AI agents, letting us test faster, publish quicker, and scale without extra layers of people or delay. 
             </p>
           </div>
         </div>
