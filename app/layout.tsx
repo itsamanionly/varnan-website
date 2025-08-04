@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://varnan.tech"),
   title: "Varnan",
   description:
-    "Varnan specializes in GTM strategies tailored for early-stage AI startups, ensuring your innovation reaches its full potential.",
+    "Varnan specializes in Product Marketing and Distribution Strategies tailored for AI startups with early PMF, ensuring your innovation reaches its full potential.",
   openGraph: {
     title: "Varnan",
     description:
-      "Varnan specializes in GTM strategies tailored for early-stage AI startups, ensuring your innovation reaches its full potential.",
+      "Varnan specializes in Product Marketing and Distribution Strategies tailored for AI startups with early PMF, ensuring your innovation reaches its full potential.",
     images: ["/opengraph-image.png"],
   },
   icons: {
