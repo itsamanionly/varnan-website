@@ -107,7 +107,7 @@ export default async function Newsletter() {
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
                 {post.title}
               </h2>
-              <p className="text-sm text-gray-500 mb-2">{post.pubDate}</p>
+              <p className="text-sm text-gray-500 mb-2">{formatDate(post.pubDate)}</p>
               <p className="text-gray-700 text-sm flex-grow">
                 {post.contentSnippet}
               </p>
@@ -129,4 +129,14 @@ const BottomGradient = () => {
             <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
         </>
     );
+};
+
+const formatDate = (dateString?: string): string | undefined => {
+  if (!dateString) return;
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 };
