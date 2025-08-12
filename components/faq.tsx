@@ -12,7 +12,7 @@ const data = [
     },
     {
         id: 3,
-        question: "Do you handle Sales or Book Discovery Calls?",
+        question: "Do you handle Sales or book Discovery Calls?",
         answer: "No. We focus on marketing and distribution, creating demand and awareness. Your team owns the sales conversations and closing."
     },
     {
