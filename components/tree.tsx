@@ -14,30 +14,30 @@ type RightNode = {
 
 const rightNodes: RightNode[] = [
   {
-    label: "Positioning & Narrative Building",
+    label: "Positioning That Creates Demand",
     description:
-      "We turn your technical edge into a clear, compelling story your users (and investors) understand - fast.",
+      "Define the positioning that gets more attention, stronger adoption, and a clear hold in your category.",
   },
   {
-    label: "Content and Distribution",
+    label: "Content Strategy That Converts",
     description:
-      "From explainers to founder-driven posts, we create content loops that drive awareness, trust, and signups.",
+      "Identify the channels with the best ROI, map the content plan, and run it end-to-end.",
   },
   {
-    label: "Precise User Acquisition",
+    label: "User Acquisition for Feedback",
     description:
-      "No broad targeting, We help you zero in on the ICP that will grow with you and convert.",
+      "Get the right early users so your feedback is sharp, your roadmap is clearer, and your next build hits the mark.",
   },
   {
-    label: "Community Growth & Marketing",
+    label: "High-Impact Product Launches",
     description:
-      "We design and run early growth experiments to find what moves the needle.",
+      "Plan and Launch across multiple platforms to get in front of the right audience fast.",
   },
-  {
-    label: "Product-Market Fit Signalling",
-    description:
-      "We help you track the right GTM metrics so you can iterate quickly and prove traction before you run out of runway.",
-  },
+  // {
+  //   label: "Product-Market Fit Signalling",
+  //   description:
+  //     "We help you track the right GTM metrics so you can iterate quickly and prove traction before you run out of runway.",
+  // },
 ];
 
 export const Tree: React.FC = () => {

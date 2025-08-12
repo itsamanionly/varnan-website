@@ -3,7 +3,7 @@ const data = [
     {
         id: 1,
         question: "What exactly does Varnan do for AI startups?",
-        answer: "We help AI startups launch and grow. That means defining clear positioning, writing technical content that earns trust, building distribution across Reddit, Hacker News, and LinkedIn, and driving user acquisition through repeatable growth loops."
+        answer: "Varnan focuses on increasing your product’s overall visibility, building market traction, and helping you acquire the right users,  the ones who drive feedback, adoption, and growth. Our work spans positioning, content strategy, distribution, and launches, so you end up with a stronger presence in the market."
     },
     {
         id: 2,
@@ -23,8 +23,13 @@ const data = [
     {
         id: 5,
         question: "What makes your product marketing approach different from others?",
-        answer: "We’re a team of AI engineers first, marketers second. Every part of our workflow is powered by AI agents. It’s how we test faster, publish quicker, and scale your product marketing efforts without adding extra layers of people or delay."
+        answer: "We’re a team of AI engineers first, marketers second. Every part of our workflow is powered by AI agents. It’s how we test faster, publish quicker, and scale your product marketing efforts without adding extra layers of people or delay."
     },
+    {
+        id: 6,
+        question: "Do we help in increasing my social media followers?",
+        answer: "No, follower growth is a side effect, not the goal. We focus on positioning, distribution, and user acquisition that increase your product’s visibility in the market, bring in the right users, and drive adoption. The result is lasting traction and market presence, not just a bigger number on a profile."
+    }
 ]
 export const Faq = () => {
     return (
