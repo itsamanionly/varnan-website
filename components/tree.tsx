@@ -14,24 +14,24 @@ type RightNode = {
 
 const rightNodes: RightNode[] = [
   {
-    label: "Positioning That Creates Demand",
+    label: "Whats this to We need this",
     description:
-      "Define the positioning that gets more attention, stronger adoption, and a clear hold in your category.",
+      "Positioning your AI product so prospects self-qualify and inbound increases 3x",
   },
   {
-    label: "Content Strategy That Converts",
+    label: "$50K pipeline with 0 SDRs",
     description:
-      "Identify the channels with the best ROI, map the content plan, and run it end-to-end.",
+      "ROI-positive content that generates Enterprise leads at 33% lower cost",
   },
   {
     label: "User Acquisition for Feedback",
     description:
-      "Get the right early users so your feedback is sharp, your roadmap is clearer, and your next build hits the mark.",
+      "Get early users who improve signal quality and cut iteration cycles by 30–50%.",
   },
   {
     label: "High-Impact Product Launches",
     description:
-      "Plan and Launch across multiple platforms to get in front of the right audience fast.",
+      "Launch across key platforms to drive 3–5× reach and accelerate signup spikes",
   },
   // {
   //   label: "Product-Market Fit Signalling",
