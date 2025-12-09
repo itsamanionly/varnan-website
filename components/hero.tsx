@@ -7,9 +7,9 @@ export const Hero = () => {
       <h1 className="text-balance z-50 text-center text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl ">
         You Build the AI
         <br className="block " />
-        We Launch it to the{" "}
+        We Turn it into {" "}
         <span className="inline-flex overflow-hidden relative bg-white mt-1.5 px-1">
-          <span className="gradient-text">World.</span>
+          <span className="gradient-text">Revenue.</span>
           <div className="aurora absolute inset-0 pointer-events-none mix-blend-lighten opacity-50">
             <div
               className="aurora__item absolute w-[60vw] h-[60vw]"
@@ -72,7 +72,7 @@ export const Hero = () => {
         </span>
       </h1>
       <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium text-center py-4">
-        Varnan specializes in Product Marketing and distribution strategies that turn early PMF into predictable growth.
+        Varnan transforms AI startups from "cool tech" into revenue-generating businesses through outcome-driven Product Marketing.
       </p>
 
       <div className=" flex items-center justify-center my-5">
