@@ -1,11 +1,15 @@
 import { Contact } from '@/components/contact'
 import { Faq } from '@/components/faq'
 import { Footer } from '@/components/footer'
+import { ForYou } from '@/components/for-you'
+import { Founders } from '@/components/founders'
 import { Hero } from '@/components/hero'
+import { LandingBlogs } from '@/components/landing-blogs'
 import { Navbar } from '@/components/navbar'
+import { Phases } from '@/components/phases'
 import { Stats } from '@/components/stats'
 import { Testimonials } from '@/components/testimonials'
-import {Tree} from '@/components/tree'
+import { Tree } from '@/components/tree'
 import React from 'react'
 
 const HomePage = () => {
@@ -16,8 +20,12 @@ const HomePage = () => {
         <Hero />
         <Testimonials />
         <Tree />
+        <Phases />
         <Stats />
+        <LandingBlogs />
+        <ForYou />
       </div>
+      <Founders />
       <Contact />
       <Faq />
       <Footer />
