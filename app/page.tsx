@@ -22,11 +22,11 @@ const HomePage = () => {
         <Tree />
         <Phases />
         <Stats />
-        <LandingBlogs />
         <ForYou />
       </div>
-      <Founders />
       <Contact />
+      <Founders />
+      <LandingBlogs />
       <Faq />
       <Footer />
     </main>

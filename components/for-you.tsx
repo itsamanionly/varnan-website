@@ -2,12 +2,11 @@ import React from 'react'
 import { Check, X } from "lucide-react"
 export const ForYou = () => {
     const fitCriteria = [
-        "Have proven product-market fit ($50K-$500k ARR)",
-        "Have technical founders who can build but need GTM help",
-        "Are getting signups but struggling to convert to paid",
-        "Want to scale without building a massive marketing team",
+        "Have proven Product-Market Fit ($50K-$500k ARR)",
+        "Have Technical Founders who can build but need GTM help",
+        "Are getting Signups but struggling to convert to Paid Customers",
+        "Want to scale without building a massive Marketing Team",
         "Are YC-backed or venture-funded (understand growth urgency)",
-        'Get "This is cool, but what does it do?" responses',
     ]
 
     const notFitCriteria = [
@@ -15,9 +14,10 @@ export const ForYou = () => {
         "Are pre-revenue with no customer feedback",
         'Want us to "figure out" what to build',
         "Need demand creation, not demand capture",
+        "You want quick hacks, not systems that compound"
     ]
     return (
-        <section className="py-16 md:py-24 px-4 md:px-6 max-w-7xl mx-auto ">
+        <section className="pt-16 md:pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto ">
             <div className="mb-16 text-center mx-auto">
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-4 text-balance leading-tight">
                     Is This For You?

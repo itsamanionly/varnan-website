@@ -72,10 +72,10 @@ export const Hero = () => {
         </span>
       </h1>
       <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium text-center py-4">
-        Varnan transforms AI startups from &quot;cool tech&quot; into revenue-generating businesses through outcome-driven Product Marketing.
+        Get qualified leads consistently with proven content, positioning, and outbound strategies without guessing or hiring a full marketing team.
       </p>
 
-      <div className=" flex items-center justify-center my-5">
+      <div className=" flex flex-col items-center justify-center my-5">
         <Link href="https://calendly.com/varnan-discovery-call/30min">
           <button
             className="bg-gradient-to-br w-fit px-9 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800  text-white rounded-md h-11 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
@@ -85,6 +85,11 @@ export const Hero = () => {
             <BottomGradient />
           </button>
         </Link>
+        {/* <div className="mt-2 flex items-center justify-center">
+          <span className="bg-green-50 text-green-700 px-2 py-[3px] rounded text-[14px] font-medium border border-green-200 shadow">
+            Results in 90 days or We Refund Everything
+          </span>
+        </div> */}
       </div>
 
     </section>
