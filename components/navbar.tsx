@@ -9,13 +9,13 @@ export const Navbar = () => {
       <nav className="flex justify-between px-3">
         <Logo />
         <div className="flex items-center gap-4 md:gap-8">
-          <Link
+          {/* <Link
             className="font-normal text-md md:text-xl font-readex relative group/btn"
             href={"/about-us"}
           >
             About Us
             <BottomGradient />
-          </Link>
+          </Link> */}
           <ResourcesDropdown />
         </div>
       </nav>

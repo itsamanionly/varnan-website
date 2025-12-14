@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://varnan.tech"),
   title: "Varnan",
   description:
-    "Varnan specializes in Product Marketing and Distribution Strategies tailored for AI startups with early PMF, ensuring your innovation reaches its full potential.",
+    "Get a qualified pipeline with proven go-to marketing systems for AI startups with a 90-day money-back guarantee. ",
   openGraph: {
     title: "Varnan",
     description:
-      "Varnan specializes in Product Marketing and Distribution Strategies tailored for AI startups with early PMF, ensuring your innovation reaches its full potential.",
+      "Get a qualified pipeline with proven go-to marketing systems for AI startups with a 90-day money-back guarantee. ",
     images: ["/opengraph-image.png"],
   },
   icons: {

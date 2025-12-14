@@ -1,24 +1,61 @@
 "use client"
 import React from 'react'
 import { motion } from "framer-motion";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa6";
+// import { FaGlobe } from "react-icons/fa6";
+import { IoIosGlobe } from "react-icons/io";
+// import { FaReddit } from "react-icons/fa6";
+import { FaReddit } from "react-icons/fa";
+const SocialIcon = ({ platform }: { platform: string }) => {
+    const iconMap: Record<string, React.ReactElement> = {
+        linkedin: (
+            <FaLinkedin size={22} />
+        ),
+        instagram: (
+            <FaInstagram size={22} />
+        ),
+        medium: (
+            <FaMedium size={22} />
+        ),
+        website: (
+            <IoIosGlobe size={22} />
+        ),
+        reddit: (
+            <FaReddit size={24} />
+        ),
+    };
+
+    return iconMap[platform.toLowerCase()] || null;
+};
 
 const teamMembers = [
     {
         name: "Paras Madan",
         role: "Co-Founder",
-        bio: "An action-oriented builder at heart, he has all the right ingredients: led GTM for two YC-backed AI companies (Athina and Unify AI), scaled an AI community to 250K with 50M total views.",
+        bio: "An action-oriented builder at heart. He's led GTM for two YC-backed AI companies (Athina and Unify AI) and scaled an AI community to 250K+ with 50M+ total views.",
         image: "/paras.png",
+        socials: {
+            instagram: "https://www.instagram.com/parasmadan.in",
+            linkedin: "https://www.linkedin.com/in/paras-madan-a9863716b",
+            medium: "https://medium.com/@parasmadan.in",
+            website: "https://parasmadan.in",
+        },
     },
     {
         name: "Sam Josh",
         role: "Co-Founder",
-        bio: "A Stanford grad who's worked with Paras for 4+ years. He handles GTM strategy, picks the right channels, and runs campaigns end-to-end.",
+        bio: "A Stanford graduate who's worked closely with Paras for 4+ years. He leads GTM strategy, chooses the right channels, and runs campaigns end-to-end.",
         image: "/sam.jpg",
+        socials: {
+            reddit: "https://www.reddit.com/user/Sam_Tech1/"
+        },
     },
 ];
 export const Founders = () => {
     return (
-        <section className=" bg-background pb-0">
+        <section className=" bg-background  py-16 md:py-24">
             <div className="container mx-auto px-6">
                 {/* Header */}
                 <motion.div
@@ -62,9 +99,33 @@ export const Founders = () => {
                             <p className="mt-1 text-sm font-medium uppercase tracking-wider text-muted-foreground">
                                 {member.role}
                             </p>
+                            {member.socials && Object.keys(member.socials).length > 0 && (
+                                <div className="mt-6 flex justify-center gap-4">
+                                    {Object.entries(member.socials).map(([platform, url]) => {
+                                        if (!url) return null;
+
+                                        const platformName = platform.charAt(0).toUpperCase() + platform.slice(1);
+
+                                        return (
+                                            <a
+                                                key={platform}
+                                                href={url as string}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                                                aria-label={`${member.name}'s ${platformName}`}
+                                            >
+                                                <SocialIcon platform={platform} />
+                                            </a>
+                                        );
+                                    })}
+                                </div>
+                            )}
                             <p className="mt-4 leading-relaxed text-muted-foreground">
                                 {member.bio}
                             </p>
+                            {/* Social Links */}
+
                         </motion.div>
                     ))}
                 </div>

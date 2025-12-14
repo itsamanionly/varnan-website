@@ -14,24 +14,24 @@ type RightNode = {
 
 const rightNodes: RightNode[] = [
   {
-    label: "Whats this to We need this",
+    label: "Clear AI Product Positioning",
     description:
-      "Positioning your AI product so prospects self-qualify and inbound increases 3x",
+      "Position your AI product so prospects self-qualify and inbound increases 3x.",
   },
   {
-    label: "$50K pipeline with 0 SDRs",
+    label: "$10K Pipeline. Zero SDRs",
     description:
-      "ROI-positive content that generates Enterprise leads at 33% lower cost",
+      "ROI-positive content that consistently generates enterprise leads at 33% lower cost.",
   },
   {
-    label: "User Acquisition for Feedback",
+    label: "User Acquisition for Real Feedback",
     description:
-      "Get early users who improve signal quality and cut iteration cycles by 30–50%.",
+      "Bring in early users who improve signal quality and reduce iteration cycles by 30–50%.",
   },
   {
     label: "High-Impact Product Launches",
     description:
-      "Launch across key platforms to drive 3–5× reach and accelerate signup spikes",
+      "Launch across the platforms that matter to drive 3–5x reach and accelerate signup spikes.",
   },
   // {
   //   label: "Product-Market Fit Signalling",
@@ -89,7 +89,7 @@ export const Tree: React.FC = () => {
             Varnan
           </h2>
         </div>
-        
+
         {/* Feature cards with references for connections */}
         {rightNodes.map(({ label, description }, index) => (
           <div
@@ -101,10 +101,10 @@ export const Tree: React.FC = () => {
               {label}
             </h3>
             <p className="text-base text-gray-600 text-center">{description}</p>
-            
+
             {/* Add direct SVG connection line to next card (except last card) */}
             {index < rightNodes.length - 1 && (
-              <div className="absolute left-1/2 bottom-0 h-6 bg-gray-500" style={{ transform: 'translateX(-50%)', bottom: '-26px',  width: '2px'}} />
+              <div className="absolute left-1/2 bottom-0 h-6 bg-gray-500" style={{ transform: 'translateX(-50%)', bottom: '-26px', width: '2px' }} />
             )}
           </div>
         ))}

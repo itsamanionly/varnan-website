@@ -8,7 +8,9 @@ export const Contact = () => {
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <div className='container mx-auto py-20  '>
                 <div className='bg-white w-[80%] mx-auto text-center p-6 border rounded-lg drop-shadow-sm'>
-                    <h2 className='text-2xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-center'> Your Product Leads the Future. <br/> We&apos;ll Get it Discovered
+                    <h2 className='text-2xl font-semibold tracking-tighter sm:text-4xl md:text-5xl text-center'>
+                        Your Product Leads the Future. <br /> We Turn It Into Demand.
+
                     </h2>
                     <div className=" flex items-center justify-center mt-4">
                         <Link href="https://calendly.com/varnan-discovery-call/30min">

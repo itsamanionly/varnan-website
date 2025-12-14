@@ -11,13 +11,13 @@ const phases = [
         duration: '4-6 weeks',
         outcome: {
             title: 'OUTCOME',
-            description: 'ICP can explain what you do and why it matters in 10 seconds'
+            description: 'Your ICP can clearly explain what you do and why it matters in 10 seconds.'
         },
         items: [
-            'Market research & competitor analysis',
-            'Positioning workshop with founders',
-            'Messaging framework & value props',
-            'Customer interview program'
+            'Deep market and competitor signal mapping',
+            'Founder-led positioning and narrative workshop',
+            'Clear messaging hierarchy and value propositions',
+            'High-signal customer interviews to validate demand'
         ],
         color: '#000000',
         bgGradient: 'from-gray-900 via-gray-800 to-black'
@@ -30,13 +30,13 @@ const phases = [
         duration: '8-12 weeks',
         outcome: {
             title: 'OUTCOME',
-            description: '3x increase in qualified inbound leads within 90 days'
+            description: '3x increase in qualified inbound leads within 90 days.'
         },
         items: [
-            'Technical content that ranks on Google',
-            'Product-led growth content (templates, tools, interactive demos)',
-            'Founder thought leadership on LinkedIn',
-            'Launch sequence for major releases'
+            'Technical content built to rank and compound on Google',
+            'Product-led assets (templates, tools, interactive demos)',
+            'Founder thought leadership designed for LinkedIn distribution',
+            'Structured launch sequences for major product releases'
         ],
         color: '#1a1a1a',
         bgGradient: 'from-gray-800 via-gray-700 to-gray-900'
@@ -49,13 +49,13 @@ const phases = [
         duration: '6-10 weeks',
         outcome: {
             title: 'OUTCOME',
-            description: 'Repeatable launch playbook that generates $50k+ pipeline per drop'
+            description: 'A repeatable launch playbook generating $50K+ pipeline per drop.'
         },
         items: [
-            'Multi-channel launch campaigns',
-            'Design partner recruitment',
-            'PR & media strategy',
-            'Community building & advocacy'
+            'Coordinated multi-channel launch execution',
+            'Design partner and early champion recruitment',
+            'PR and media narratives aligned with positioning',
+            'Community and advocacy loops to sustain momentum'
         ],
         color: '#0d0d0d',
         bgGradient: 'from-gray-700 via-gray-800 to-black'
@@ -81,7 +81,7 @@ export const Phases = () => {
                             <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">Measurable Results.</span>
                         </h1>
                         <p className="text-sm sm:text-base md:text-lg text-gray-600 font-light max-w-2xl mx-auto leading-relaxed px-2">
-                            Follow our proven framework to scale your business from positioning to launch
+                            How we take AI companies from positioning to launch with measurable results.
                         </p>
                     </div>
 
@@ -148,13 +148,10 @@ export const Phases = () => {
                                                 ))}
                                             </div>
 
-                                            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 flex items-center justify-between group-hover:border-black transition-colors">
+                                            {/* <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 flex items-center justify-between group-hover:border-black transition-colors">
                                                 <span className="text-[10px] sm:text-xs font-bold text-gray-600 uppercase tracking-wider">Phase {phase.number}</span>
-                                                {/* <div className="flex items-center gap-1 sm:gap-2 text-black opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                                                    <span className="text-[10px] sm:text-xs font-semibold hidden sm:inline">Explore</span>
-                                                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                                                </div> */}
-                                            </div>
+                                                
+                                            </div> */}
                                         </div>
                                     </div>
 

@@ -2,33 +2,33 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const data = [
     {
         id: 1,
-        question: "What exactly does Varnan do for AI Startups?",
-        answer: "Varnan focuses on increasing your product’s overall visibility, building market traction, and helping you acquire the right users, the ones who drive feedback, adoption, and growth. Our work spans positioning, content strategy, distribution, and launches, so you end up with a stronger presence in the market."
+        question: "Why should we work with you vs. hiring a VP of Marketing?",
+        answer: "Speed and proven systems. A VP takes 6+ months to ramp, costs $200K+/year, and may not have experience scaling AI products specifically. We deploy battle-tested frameworks week one, with no ramp time or equity dilution."
     },
     {
         id: 2,
-        question: "What stage of Startups do you work with?",
-        answer: "We work with seed to Series A Native AI startups that already have a working product and need traction."
+        question: "We already have product-market fit. Why do we need this?",
+        answer: "PMF ≠ scalable GTM. Most AI companies nail the product but struggle with repeatable demand generation, enterprise positioning, and pipeline velocity. We bridge that gap with systems that compound, not one-off campaigns."
     },
     {
         id: 3,
-        question: "Do you handle Sales or book Discovery Calls?",
-        answer: "No. We focus on marketing and distribution, creating demand and awareness. Your team owns the sales conversations and closing."
+        question: "What makes your approach different from typical marketing agencies?",
+        answer: "We're operators, not creatives. Our frameworks come from scaling Y Combinator companies and AI-first products. We focus on pipeline metrics (MQLs, SQLs, pipeline $) not vanity metrics (impressions, clicks)."
     },
     {
         id: 4,
-        question: "How are you different from a Marketing Agency?",
-        answer: "We act like an embedded product marketing team, not a campaign vendor. No vanity metrics, no bloated retainers just impactful product launches, technical content, sharp positioning, and channels that compound over time."
+        question: " How do you guarantee results? ",
+        answer: "Two ways: (1) We only work with companies that have proven ICP + validated messaging, and (2) Our playbooks are battle-tested across 15+ AI companies. If fundamentals are there, execution is predictable."
     },
     {
         id: 5,
-        question: "What makes your Product Marketing approach different from others?",
-        answer: "We’re a team of AI engineers first, marketers second. Every part of our workflow is powered by AI agents. It’s how we test faster, publish quicker, and scale your product marketing efforts without adding extra layers of people or delay."
+        question: "Can you work with our existing marketing team?",
+        answer: "Absolutely. We're force multipliers, not replacements. We plug in as interim CMO/demand gen leads, build the systems, then transition execution to your team. Many clients keep us on for optimization."
     },
     {
         id: 6,
-        question: "Do you help in increasing my Social Media followers?",
-        answer: "No, follower growth is a side effect, not the goal. We focus on positioning, distribution, and user acquisition that increase your product’s visibility in the market, bring in the right users, and drive adoption. The result is lasting traction and market presence, not just a bigger number on a profile."
+        question: "Do you help grow social media followers?",
+        answer: "Not directly but we'll position you as the go-to expert in your space. Thought leadership content, founder-led GTM, and strategic visibility that attracts your ICP. Followers are a byproduct, pipeline is the goal."
     }
 ]
 export const Faq = () => {
