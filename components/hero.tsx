@@ -90,6 +90,9 @@ export const Hero = () => {
             Results in 90 days or We Refund Everything
           </span>
         </div> */}
+        <span className=" px-2 py-3  text-gray-400   text-[14px] font-medium ">
+          Results in 90 days or We Refund Everything
+        </span>
       </div>
 
     </section>
