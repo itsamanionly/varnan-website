@@ -1,9 +1,9 @@
 // components/blogs.tsx
 import Link from "next/link";
-import { Post } from "@/lib/getMediumPosts";
+import type { BlogListItem } from "@/lib/mdxBlogs";
 
 type BlogsProps = {
-  posts: Post[];
+  posts: BlogListItem[];
 };
 
 export default function Blogs({ posts }: BlogsProps) {
@@ -31,10 +31,12 @@ export default function Blogs({ posts }: BlogsProps) {
                     {post.title}
                   </h2>
                 </Link>
-                {/* <p className="text-gray-500 text-sm font-merri">
-                  {new Date(post.pubDate).toDateString()}
-                </p> */}
-                <p className="mt-2 text-gray-700">{post.contentSnippet}</p>
+                {post.date ? (
+                  <p className="text-gray-500 text-sm font-merri mt-1">
+                    {new Date(post.date).toDateString()}
+                  </p>
+                ) : null}
+                <p className="mt-2 text-gray-700">{post.description}</p>
               </div>
             </div>
           ))}

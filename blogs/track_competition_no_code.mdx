@@ -1,0 +1,71 @@
+---
+title: "How do we keep track of competition with No Code AI Agents: Demo"
+date: "2025-06-12"
+description: "A no-code competitor tracking agent that listens to signals across the internet, filters noise with AI, and ships the key updates into Slack or Google Sheets."
+image: "https://storage.googleapis.com/img_varnan/track_competition/n8n_workflow_track_competition.png"
+---
+
+<div style={{ textAlign: 'left' }}>
+
+For building a AI product in today’s World, you need to be fast, we should say blazingly fast because if aren’t chances are you will be left behind and someone else will seize the opportunity. But lets be real, we all have limitations, how can you track everything that’s happening, its not Humanly possible.
+
+So today, lets build a **No Code AI Agent** that tracks your niche keywords and competitors to understand what they launch, who they hire, what their users are saying.
+
+This AI system to keep us *constantly in the know*. It runs silently in the background, reads signals from the internet, filters the noise, and feeds us exactly what we need, right inside Slack or a Google Sheet. No excuses.
+
+Here’s exactly how we did it for our clients:
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/n8n_workflow_track_competition.png" alt="Full No Code AI Agent Workflow" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## Step 1: Track your competition with Social Listening Tools
+
+Social Listening Tools feels like magic when we start using them. These tools track every tweet, post, blog, or press release based on your niche keywords and for your competitors. Think of it as Google Alerts on steroids.
+
+For this demo, we will use **Kwatch.io** for social listening. Now we use this as this helps to track all our keywords from Reddit, Linkedin, Twitter at one place.
+
+But here are some free alternatives to Kwatch that you can play around:
+
+* **F5Bot** — Monitors Reddit and Hacker News keywords with email alerts
+* **Reddit Comber** — Sends Reddit keyword notifications directly to your Reddit inbox
+* **Notikey** — Tracks multiple subreddits with up to 15 keywords per monitor, plus email/webhook alerts
+* **Google Alerts** — Watches the broader web (news, blogs, forums) for your keywords via email/RSS
+* **Syften** — Alerts for mentions on Hacker News, Reddit, Stack Exchange, forums and blogs
+* **CrowdLens** — AI-powered sentiment analysis across Reddit, Twitter (X), and LinkedIn
+
+**Bonus Tip:** Don’t limit to just competitors. Track keywords, industry trends, new product launches — anything your startup lives or dies by.
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/kwatch_dashboard.png" alt="KWatch Dashboard Interface" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## Step 2: Build Your No-Code AI Agent
+
+Now connect the dots with **Make.com** or **Zapier**. Here’s what we wired up for our clients:
+
+* Use Gmail Connector to read emails sent by Kwatch. Put in the exact subject line for reading the emails.
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/emails_from_kwatch.png" alt="Emails from KWatch" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/Gmail_Connector_with_Query.png" alt="Gmail Connector Configuration" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+* Now pass these emails to a GPT Connector to filter off the right ones based on your criteria and what specifically you are looking for tracking.
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/gpt_for_classifying.png" alt="GPT Classifier Configuration" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+* Now as the final step, use a Slack or Google Sheet integrator to send filtered, cleaned intel straight to your Slack channel.
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/Sending_selected_ones_to_Slack.png" alt="Slack and Google Sheet Integration" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+Now with this, we have our competition tracker ready. Now we can run it any number of times a day to keep a track of everything from all around the internet.
+
+<img src="https://storage.googleapis.com/img_varnan/track_competition/Run_your_agent_periodically.png" alt="Run Agent Button" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## Why this works better than Manual Tracking?
+
+Because founders and PMs are *drowning* in noise. This agent helps them collect super important data which helps take data backed decisions to plan the product forward. Moreover, It makes your team 10x more aware, without adding work.
+
+Set this up once, and you’ll start catching things you would’ve missed — new feature rollouts, user feedback loops, pivots, job openings. The kind of stuff that gives you an edge.
+
+> We at Varnan help high growth startups with their GTM and building these tools end to end so that they don’t have to scratch their head thinking about distribution and other pipelines.
+
+If you are a Founder of a high growth AI startup, we would love to have a word with you. [Book a call] (https://calendly.com/varnan-discovery-call/30min?month=2025-12) or reach to us on paras@varnan.tech
+
+</div>
