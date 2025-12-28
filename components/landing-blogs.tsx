@@ -11,8 +11,8 @@ const posts = [
     {
         title: 'How Varnan Turned Reddit Into Athina’s (YC W23) Primary Growth Channel Without Getting Blocked',
         description: "Athina AI, a YC-backed LLM observability platform, struggled with discovery despite a strong product. Varnan used value-first Reddit strategy to drive 15–20× user growth, 10K+ upvotes, enterprise customers, low CAC, and AI search visibility.",
-        image: '/blog-2.png',
-        link: 'https://storage.googleapis.com/img_varnan/Case-studies/athina_ai_case_study/cover-image/Athina_AI_Case_Study_Cover_image.png'
+        image: 'https://storage.googleapis.com/img_varnan/Case-studies/athina_ai_case_study/cover-image/Athina_AI_Case_Study_Cover_image.png',
+        link: 'https://varnan.tech/case-studies/how-varnan-turned-reddit-into-athina-s-yc-w23-primary-growth-channel-without-getting-blocked'
     },
     {
         title: 'From Invisible to Inevitable: How Strategic Content by Varnan generated 6000+ GitHub Stars',
