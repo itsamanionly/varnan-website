@@ -49,7 +49,7 @@ const phases = [
         duration: '6-10 weeks',
         outcome: {
             title: 'OUTCOME',
-            description: 'A repeatable launch playbook generating $50K+ pipeline per drop.'
+            description: 'A repeatable launch playbook generating $10K+ pipeline per drop.'
         },
         items: [
             'Coordinated multi-channel launch execution',
