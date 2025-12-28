@@ -24,7 +24,7 @@ const phases = [
     },
     {
         number: 2,
-        title: 'CONTENT ENGINE',
+        title: 'GROWTH ENGINE',
         subtitle: 'PHASE 2',
         icon: Flame,
         duration: '8-12 weeks',
