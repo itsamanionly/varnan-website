@@ -6,7 +6,11 @@ import { getAllCaseStudies } from "@/lib/mdxCaseStudies";
 export const revalidate = 3600;
 
 export default async function CaseStudiesPage() {
-    const items = await getAllCaseStudies();
+    const items = (await getAllCaseStudies()).sort((a, b) => {
+        const dateA = new Date(a.date ?? 0).getTime();
+        const dateB = new Date(b.date ?? 0).getTime();
+        return dateB - dateA;
+    });
 
     return (
         <div>

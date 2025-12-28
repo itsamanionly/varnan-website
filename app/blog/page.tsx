@@ -7,7 +7,11 @@ import { getAllBlogPosts } from "@/lib/mdxBlogs";
 export const revalidate = 3600;
 
 export default async function BlogsPage() {
-  const posts = await getAllBlogPosts();
+  const posts = (await getAllBlogPosts()).sort((a, b) => {
+    const dateA = new Date(a.date ?? 0).getTime();
+    const dateB = new Date(b.date ?? 0).getTime();
+    return dateB - dateA;
+  });
   return (
     <div>
       <div className="container mx-auto px-2 pb-5">

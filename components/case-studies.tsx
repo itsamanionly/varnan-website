@@ -26,9 +26,9 @@ export default function CaseStudies({ items }: CaseStudiesProps) {
                       className="w-full object-cover rounded-md mb-4"
                     />
                   ) : null}
-                  <h2 className="text-xl font-semibold text-black font-merri">
+                  {/* <h2 className="text-xl font-semibold text-black font-merri">
                     {cs.title}
-                  </h2>
+                  </h2> */}
                 </Link>
                 {cs.date ? (
                   <p className="text-gray-500 text-sm font-merri mt-1">
