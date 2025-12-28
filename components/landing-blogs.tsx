@@ -1,24 +1,26 @@
 import React from 'react'
 import { LandingBlogContainer } from './landing-blog-container';
 const posts = [
+
     {
-        title: 'First 100 users for your AI Product: Lessons from our 2 YC Portfolio Companies',
-        description: "Getting first 100 users for your AI Startup is not easy, it's a battlefield. Why? Because the market is too flooded. Everyone's selling the next big AI SaaS. Here's how we did it for our portfolio companies.",
-        image: '/blog-1.png',
-        link: 'https://varnan.tech/blog/first-100-users-for-your-ai-product-lessons-from-our-2-yc-portfolio-companies'
+        title: 'How Varnan helped Server Survival Gained 1000+ GitHub Stars and Built an Active Contributor Base in 90 Days',
+        description: "Server Survival is an open-source tower defense game that teaches cloud architecture. With little visibility in a crowded developer education market, Varnan helped it break through - driving 1,000+ GitHub stars, contributor growth, and direct attribution from new community members.",
+        image: 'https://storage.googleapis.com/img_varnan/Case-studies/server-survival-case-study/cover-image/server-survival-case-study-cover-image.png',
+        link: 'https://varnan.tech/case-studies/how-varnan-helped-server-survival-gained-1000-github-stars-and-built-an-active-contributor-base-in-90-days'
     },
     {
-        title: '100x UX Research AI Agent: Finding why Products fail using Reddit and Hacker News',
-        description: "If you're building a product, the hardest thing is knowing what your users are actually struggling with. Learn how to build agents that help you do it at Scale ",
+        title: 'How Varnan Turned Reddit Into Athina’s (YC W23) Primary Growth Channel Without Getting Blocked',
+        description: "Athina AI, a YC-backed LLM observability platform, struggled with discovery despite a strong product. Varnan used value-first Reddit strategy to drive 15–20× user growth, 10K+ upvotes, enterprise customers, low CAC, and AI search visibility.",
         image: '/blog-2.png',
-        link: 'https://varnan.tech/blog/100x-ux-research-ai-agent-finding-why-products-fail-using-reddit-and-hacker-news'
+        link: 'https://storage.googleapis.com/img_varnan/Case-studies/athina_ai_case_study/cover-image/Athina_AI_Case_Study_Cover_image.png'
     },
     {
-        title: 'Generate Viral Meme Videos for Your Business Using No-Code AI Agents',
-        description: "Meme marketing works, but creating viral videos at scale is time-consuming. Learn how to build no-code AI agents that generate scroll-stopping meme content for your business automatically. ",
-        image: '/blog-3.png',
-        link: 'https://varnan.tech/blog/generate-viral-meme-videos-for-your-business-using-nocode-ai-agents'
-    }
+        title: 'From Invisible to Inevitable: How Strategic Content by Varnan generated 6000+ GitHub Stars',
+        description: "Three technically strong open-source projects had zero visibility. Varnan used strategic video distribution to reach technical audiences driving 6,000+ GitHub stars in weeks, major tech press coverage, and measurable community activation.",
+        image: 'https://storage.googleapis.com/img_varnan/Case-studies/6000stars-repo-case-study/cover-image/6000stars_case_study.png',
+        link: 'https://varnan.tech/case-studies/from-invisible-to-inevitable-how-strategic-content-by-varnan-generated-6000-github-stars'
+    },
+
 ]
 export const LandingBlogs = () => {
     return (

@@ -17,6 +17,12 @@ export const Navbar = () => {
             <BottomGradient />
           </Link> */}
           <ResourcesDropdown />
+          <Link
+            href="/case-studies"
+            className="font-normal text-md md:text-xl font-readex relative group/btn"
+          >
+            Case Studies
+          </Link>
         </div>
       </nav>
     </header>
