@@ -1,26 +1,51 @@
-import { getMediumPosts } from "@/lib/getMediumPosts";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { getAllBlogPosts, getBlogPost } from "@/lib/mdxBlogs";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
-  try {
-    const posts = await getMediumPosts();
-    return posts.map((post) => ({ slug: post.slug }));
-  } catch (err) {
-    console.error("Failed to fetch Medium posts in generateStaticParams:", err);
-    return [];
-  }
+  const posts = await getAllBlogPosts();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
-export const dynamic = "auto";
+export const revalidate = 3600;
 
-export default async function BlogPostPage(props: any) {
-  const params = await props.params;
-  const slug = params.slug;
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
-  const posts = await getMediumPosts();
-  const post = posts.find((p) => p.slug === slug);
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
+  if (!post) return {};
+
+  const title = post.frontmatter.title;
+  const description = post.frontmatter.description;
+  const image = post.frontmatter.image;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: image ? [{ url: image }] : undefined,
+    },
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      title,
+      description,
+      images: image ? [image] : undefined,
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
 
   if (!post) return notFound();
 
@@ -30,14 +55,15 @@ export default async function BlogPostPage(props: any) {
         <Navbar />
       </div>
       <article className="max-w-5xl mx-auto px-4 py-8 font-merri">
-        <h1 className="font-extrabold mb-4 tracking-wider text-4xl md:text-7xl">{post.title}</h1>
-        <p className="text-sm text-gray-500 mb-6">
-          {new Date(post.pubDate).toDateString()}
-        </p>
-        <div
-          className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.htmlContent }}
-        />
+        <h1 className="font-extrabold mb-4 tracking-wider text-4xl md:text-7xl">
+          {post.frontmatter.title}
+        </h1>
+        {post.frontmatter.date ? (
+          <p className="text-sm text-gray-500 mb-6">
+            {new Date(post.frontmatter.date).toDateString()}
+          </p>
+        ) : null}
+        <div className="prose prose-lg max-w-none">{post.content}</div>
       </article>
       <Footer />
     </main>

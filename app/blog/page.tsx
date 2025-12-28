@@ -1,20 +1,20 @@
 // app/blog/page.tsx
-import { getMediumPosts } from "@/lib/getMediumPosts";
-import Blogs from "@/components/blogs"; // adjust path if needed
+import Blogs from "@/components/blogs";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { getAllBlogPosts } from "@/lib/mdxBlogs";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 export default async function BlogsPage() {
-  const posts = await getMediumPosts();
+  const posts = await getAllBlogPosts();
   return (
     <div>
       <div className="container mx-auto px-2 pb-5">
-        <Navbar/>
+        <Navbar />
       </div>
-      <Blogs posts={posts}/>
-      <Footer/>
+      <Blogs posts={posts} />
+      <Footer />
     </div>
   );
 }

@@ -1,12 +1,11 @@
-// components/blogs.tsx
 import Link from "next/link";
-import type { BlogListItem } from "@/lib/mdxBlogs";
+import type { CaseStudyListItem } from "@/lib/mdxCaseStudies";
 
-type BlogsProps = {
-  posts: BlogListItem[];
+type CaseStudiesProps = {
+  items: CaseStudyListItem[];
 };
 
-export default function Blogs({ posts }: BlogsProps) {
+export default function CaseStudies({ items }: CaseStudiesProps) {
   return (
     <div className="relative h-fit w-full bg-white overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 z-0">
@@ -16,27 +15,27 @@ export default function Blogs({ posts }: BlogsProps) {
 
       <div className="relative z-10 container max-w-5xl mx-auto py-7 lg:py-15">
         <div className="flex flex-wrap -mx-4">
-          {posts.map((post, index) => (
-            <div key={index} className="mt-5 w-full md:w-1/2 px-4 mb-8">
+          {items.map((cs) => (
+            <div key={cs.slug} className="mt-5 w-full md:w-1/2 px-4 mb-8">
               <div className="p-4 border border-gray-200 rounded-lg shadow-lg h-full bg-white">
-                <Link href={`/blog/${post.slug}`}>
-                  {post.image && (
+                <Link href={`/case-studies/${cs.slug}`}>
+                  {cs.thumbnail ? (
                     <img
-                      src={post.image}
-                      alt={post.title}
+                      src={cs.thumbnail}
+                      alt={cs.title}
                       className="w-full object-cover rounded-md mb-4"
                     />
-                  )}
+                  ) : null}
                   <h2 className="text-xl font-semibold text-black font-merri">
-                    {post.title}
+                    {cs.title}
                   </h2>
                 </Link>
-                {post.date ? (
+                {cs.date ? (
                   <p className="text-gray-500 text-sm font-merri mt-1">
-                    {new Date(post.date).toDateString()}
+                    {new Date(cs.date).toDateString()}
                   </p>
                 ) : null}
-                <p className="mt-2 text-gray-700">{post.description}</p>
+                <p className="mt-2 text-gray-700">{cs.description}</p>
               </div>
             </div>
           ))}
@@ -45,3 +44,5 @@ export default function Blogs({ posts }: BlogsProps) {
     </div>
   );
 }
+
+

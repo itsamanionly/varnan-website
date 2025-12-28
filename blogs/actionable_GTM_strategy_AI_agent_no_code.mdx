@@ -1,0 +1,120 @@
+---
+title: "No-Code AI Agent for building an actionable GTM Strategy for your Startup"
+date: "2025-06-25"
+description: "A scalable no-code GTM agent that tracks competitors and turns real-time signals into an actionable go-to-market strategy."
+image: "https://storage.googleapis.com/img_varnan/Blogs_Cover_images/GTM_strategy_AI_agent_blog_cover.png"
+---
+
+<div style={{ textAlign: 'left' }}>
+
+Most startups don’t lose because of bad products, they lose because someone else told the story better, faster. While you’re shipping features and fixing bugs, your competitors are quietly framing their position right, launching updates, and capturing the market. That’s why we at Varnan built a No-Code AI agent that tracks their every move and turns that into a clear, actionable GTM strategy in real time.
+
+Here’s how we built a scalable, no-code GTM Agent that will make you a solid GTM Strategy, All actionable and no fluff.
+
+## The Problem: GTM Teams are guessing
+
+Most early stage startups keep a track of their competitors manually but with humans having 1000 things in mind, we almost forget it. You’ll hear founders say things like:
+
+> *“Oh yeah, we check LinkedIn and X sometimes… when we remember.”*
+
+But in reality, most competitor tracking workflows look like this:
+
+* Bookmarking a few sites
+* Manually Googling updates
+* Occasionally peeking at social media
+* Never documenting findings
+
+No central system. No alerts. No triggers. No action.
+
+So we thought: **What if an AI agent could do this for you every day?**
+
+## The Agent Workflow
+
+We created a fully autonomous research loop using [n8n] (https://n8n.io/) + GPT + Perplexity + Reddit + X (formerly Twitter) + custom code nodes.
+
+Here’s how we did it:
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/no_code_agent_workflow_GTM_strategy.png" alt="Full n8n GTM Agent Workflow" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 1. Webhook Trigger
+As a first step, we used a webhook that receives a POST request with the competitor’s website URL and company name.
+
+### 2. Perplexity Node
+Now, we pass the site URL to **Perplexity AI** to get deep research on:
+
+* Business model
+* Funding
+* Competitors
+* Key products
+* Market positioning
+* Reddit/X search phrases
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/perplexity_node.png" alt="Perplexity AI Node Setup" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 3. Platform-Based Batching
+Now as the third step, we run **custom code** to:
+* Extract platform-specific search queries
+* Batch requests for Reddit & X
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/GTM_strategy_no_code_Platform-Based_Batching.png" alt="Platform Batching Code Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 4. Twitter+ Reddit Scraping
+Using OAuth credentials, the bot auto-fetches the latest conversations:
+* Reddit threads using niche-specific keywords
+* Twitter posts with filters like `-is:retweet lang:en` to avoid noise
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/GTM_strategy_Twitter_Reddit_Scraping.png" alt="Twitter and Reddit Scraping Config" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 5. GPT-4o: Competitive GTM Strategy
+Now, we pass all data Perplexity response + social signals to **GPT-4o**, which generates:
+
+* GTM Strategy
+* Competitive Differentiation
+* Messaging Playbook
+* Top performing subreddits/accounts
+* Sample content calendar
+* High-leverage actions
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/competitive_GTM_strategy_chatgpt_4o.png" alt="ChatGPT-4o Competitive GTM Strategy" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 6. Final Report Compilation (Code Node)
+A custom JavaScript compiles a beautifully structured GTM Report, ready to email.
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/GTM_strategy_Final_Report_Compilation.png" alt="Report Compilation Workflow" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 7. Sending an Email
+Now as the last step, A final report is sent via SMTP to stakeholders, neatly formatted with all sections no messy JSON or Links.
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/sending_an_email.png" alt="Email Sending Step" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## Output Sections
+
+* Content Strategy
+* Competitive Positioning
+* Community Engagement
+* Recommended Actions
+* Content Calendar
+* Opportunity Areas
+* Top Subreddits
+* LinkedIn & X Accounts to Watch
+
+All derived from real-time data. All automated.
+
+<img src="https://storage.googleapis.com/img_varnan/GTM_strategy_agent/GTM_strategy_agent_final_report_outcome.png" alt="Email Sending Step" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## Why we believe this is super impactful?
+
+For early-stage AI startups, the difference between winning and fading out is often narrative clarity and speed to adapt.
+
+This agent gives you:
+* A complete view of your market landscape
+* Real Time Competitor Research
+* Platform insights (Reddit + X)
+* Suggestions from GPT based on your niche
+* Actionable output that founders and GTM teams can execute immediately
+
+> We at Varnan help high growth startups with their GTM and building these tools end to end so that they don’t have to scratch their head thinking about distribution and other pipelines.
+
+If you are a Founder of a high growth AI startup, we would love to have a word with you. [Book a call](https://calendly.com/varnan-discovery-call/30min) or reach to us on paras@varnan.tech
+
+</div>

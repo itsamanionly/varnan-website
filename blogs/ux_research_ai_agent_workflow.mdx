@@ -1,0 +1,135 @@
+---
+title: "100x UX Research AI Agent: Finding why Products fail using Reddit and Hacker News"
+date: "2025-06-30"
+description: "How we built a no-code UX research assistant that pulls real pain points from Reddit and Hacker News and turns them into actionable reports."
+image: "https://storage.googleapis.com/img_varnan/Blogs_Cover_images/ux_research_agent_cover_image.png"
+---
+
+<div style={{ textAlign: 'left' }}>
+
+If you’re building a product, the hardest thing is knowing what your users are actually struggling with. You can run surveys and talk to a few users, but that doesn’t scale. The truth is, your potential users are already talking about their pain points in public they’re just doing it on Reddit , Hacker News and X etc.
+
+> Now, no one has time to scroll forums for hours, and even if you do, most of that data never gets stored, structured, or used.
+
+That’s why we at Varnan built a fully no-code AI Agent that does all the hard work for you.
+
+## The Problem: Founders are guessing what to build
+
+Every founder thinks they know what users want. But when you ask where the data is coming from, you usually hear:
+
+> *“Oh, I sometimes go through feedback forms or search google/social media when I have time.”*
+
+Here’s what most early teams are actually doing:
+* Randomly searching product pain points
+* Skimming Reddit threads with no clear outcome
+* Clicking through tons of links, post and comments with no way to summarize them
+
+No system, no reports, no automation
+
+So we thought: **what if you could just enter your product idea and get a ready-to-use pain point report?**
+
+## The Agent Workflow
+
+We used n8n + OpenAI + Google Gemini + Reddit + Hacker News + custom AI agents to build a fully automated user research assistant.
+
+Here’s how it works, step-by-step:
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/ux_research_ai_agent_workflow.png" alt="Full UX Research Agent Workflow" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 1. Webhook Trigger from a Form
+As first the step, The flow begins when someone submits a simple form — usually with just a product idea or a broad category.
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/webhook_trigger_for_ux_research_ai_agent.png" alt="Webhook Trigger Configuration" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 2. Generate Keywords Using AI
+Then, We run the input through a GPT-based AI Agent that turns it into relevant keywords. These are actual search terms that users might be typing on Reddit or Hacker News.
+
+Think:
+** *“marketing automation tool” → keywords like: “email sequence pain”, “mailchimp vs convertkit”, “crm frustration”* **
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/generate_keywords_ux_research_agent.png" alt="AI Keyword Generator Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 3. Split Search by Platform
+Now for the third step, we break the keywords into smaller groups and route them based on where they’re most relevant. For example:
+* Tech-focused terms go to Hacker News
+* Product-related pain points go to Reddit
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/split-wise_for_platforms_ux_research_agent.png" alt="Platform Split Search Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 4. Reddit & Hacker News Scraping
+Now, The automation runs live searches on Reddit and Hacker News using APIs and OAuth. It fetches:
+* Real user posts
+* Threads with high engagement
+* Long-form discussions
+
+And skips the fluff.
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/reddit_scraping_ux_research_agent.png" alt="Reddit Scraping Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/HN_ux_research_agent.png" alt="HN Scraping Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 5. Custom AI Agents Read and Extract Insights
+Now, at the Fifth step. Here’s the real magic happens.
+
+Two separate AI agents (one for Reddit, one for Hacker News) read the content and extract:
+* Repeated complaints
+* Feature requests
+* Unmet expectations
+* Product comparisons
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/agent_extract_insights_ux_research_agent.png" alt="AI Analysis Agent Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 6. Merge, Filter & Format the Output
+After that, All results are filtered and cleaned — removing duplicates or vague responses. Then the content is merged into a unified report.
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/merge_and_filter_ux_research_agent.png" alt="Merge and Filter Code Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 7. AI Agent Creates Final Report
+This is where the output becomes useful.
+
+An AI agent summarizes everything into:
+* Clear pain point clusters
+* Feature gaps users are talking about
+* Trends or unmet needs in that space
+* Specific subreddits or HN threads that matter
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/final_report_node_ux_research_agent.png" alt="Final Report AI Agent" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+### 8. Send the Report to Your Inbox
+Lastly, the report is converted to HTML and emailed to you.
+
+clean, readable, and ready to use. No JSON dumps, no mess.
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/email_screenshot_ux_research_agent.png" alt="Email Notification Node" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## What the Report Includes:
+
+* Top User Pain Points
+* Suggested Product Features
+* High-Engagement Reddit Threads
+* Hacker News Discussions Worth Reading
+* Niche Communities to Watch
+* Summarized Takeaways
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/ux_research_agent_report_1.png" alt="Report Screenshot 1" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+Everything is real-time. Everything is traceable. And it’s all built with no code.
+
+<img src="https://storage.googleapis.com/img_varnan/ux_research_agent/ux_research_agent_image_2.png" alt="Report Screenshot 1" width="100%" style={{ display: 'block', marginRight: 'auto', marginBottom: '20px' }} />
+
+## Why we think its super impactful
+
+If you’re building in public, or just want to build what people actually need this saves you hours of manual work.
+
+* A real look into your user’s mind
+* Validated pain points from real conversations
+* Community names, links, and posts to follow
+* Zero manual research, zero guesswork, everything is data backed
+
+We built this so you don’t have to waste time digging through comments when AI can just do that for you.
+
+> We at Varnan help high growth startups with their GTM and building these tools end to end so that they don’t have to scratch their head thinking about distribution and other pipelines.
+
+If you are a Founder of a high growth AI startup, we would love to have a word with you. [Book a call](https://calendly.com/varnan-discovery-call/30min) or reach to us on paras@varnan.tech
+
+</div>
