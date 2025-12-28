@@ -28,10 +28,26 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://varnan.tech"),
-  title: "Varnan",
+  title: {
+    default: "Varnan",
+    template: "%s | Varnan",
+  },
   description:
     "Get a qualified pipeline with proven go-to marketing systems for AI startups with a 90-day money-back guarantee. ",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
+    title: "Varnan",
+    siteName: "Varnan",
+    url: "/",
+    type: "website",
+    description:
+      "Get a qualified pipeline with proven go-to marketing systems for AI startups with a 90-day money-back guarantee. ",
+    images: ["/opengraph-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Varnan",
     description:
       "Get a qualified pipeline with proven go-to marketing systems for AI startups with a 90-day money-back guarantee. ",
