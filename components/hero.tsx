@@ -72,7 +72,7 @@ export const Hero = () => {
         </span>
       </h1>
       <p className="text-base lg:w-[750px] mx-auto sm:text-lg md:text-xl text-gray-600 font-medium text-center py-4">
-        Get qualified leads consistently with proven content, positioning, and outbound strategies without guessing or hiring a full marketing team.
+        Build predictable user growth through positioning, distribution, and outbound without guesswork or a full marketing team.
       </p>
 
       <div className=" flex flex-col items-center justify-center my-5">
