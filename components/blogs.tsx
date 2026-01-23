@@ -27,9 +27,9 @@ export default function Blogs({ posts }: BlogsProps) {
                       className="w-full object-cover rounded-md mb-4"
                     />
                   )}
-                  {/* <h2 className="text-xl font-semibold text-black font-merri">
+                  <h2 className="text-xl font-semibold text-black font-merri">
                     {post.title}
-                  </h2> */}
+                  </h2>
                 </Link>
                 {post.date ? (
                   <p className="text-gray-500 text-sm font-merri mt-1">

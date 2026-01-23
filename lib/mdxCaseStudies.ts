@@ -3,7 +3,8 @@ import path from "node:path";
 
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
-import { compileMDX } from "next-mdx-remote/rsc";
+import { evaluate } from "@mdx-js/mdx";
+import * as runtime from "react/jsx-runtime";
 import { cache } from "react";
 import type React from "react";
 
@@ -111,10 +112,10 @@ export async function getAllCaseStudies(): Promise<CaseStudyListItem[]> {
 
 export async function getCaseStudy(slug: string): Promise<
   | {
-      slug: string;
-      frontmatter: CaseStudyFrontmatter;
-      content: React.ReactElement;
-    }
+    slug: string;
+    frontmatter: CaseStudyFrontmatter;
+    content: React.ReactElement;
+  }
   | null
 > {
   const index = await getCaseStudiesIndex();
@@ -125,25 +126,25 @@ export async function getCaseStudy(slug: string): Promise<
 
   try {
     const source = await fs.readFile(fullPath, "utf8");
+    const { content: mdxContent, data } = matter(source);
 
-    const compiled = await compileMDX<CaseStudyFrontmatter>({
-      source,
-      options: {
-        parseFrontmatter: true,
-        mdxOptions: {
-          remarkPlugins: [remarkGfm],
-        },
-      },
+    // Use evaluate from @mdx-js/mdx with proper React runtime
+    const { default: MDXContent } = await evaluate(mdxContent, {
+      ...runtime,
+      remarkPlugins: [remarkGfm],
+      development: false, // Force production mode to avoid dev property checks
     });
+
+    // Create proper React element
+    const element = MDXContent({}) as React.ReactElement;
 
     return {
       slug,
-      frontmatter: normalizeFrontmatter(compiled.frontmatter, match.slug),
-      content: compiled.content,
+      frontmatter: normalizeFrontmatter(data, match.slug),
+      content: element,
     };
-  } catch {
+  } catch (error) {
+    console.error(`Error compiling MDX for case study ${slug}:`, error);
     return null;
   }
 }
-
-

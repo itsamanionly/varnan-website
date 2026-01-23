@@ -3,9 +3,11 @@ import path from "node:path";
 
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
-import { compileMDX } from "next-mdx-remote/rsc";
+import { evaluate } from "@mdx-js/mdx";
+import * as runtime from "react/jsx-runtime";
 import type React from "react";
 import { cache } from "react";
+import { FAQSection, FAQItem } from "@/components/mdx/faq";
 
 export type BlogFrontmatter = {
   title: string;
@@ -110,10 +112,10 @@ export async function getAllBlogPosts(): Promise<BlogListItem[]> {
 
 export async function getBlogPost(slug: string): Promise<
   | {
-      slug: string;
-      frontmatter: BlogFrontmatter;
-      content: React.ReactElement;
-    }
+    slug: string;
+    frontmatter: BlogFrontmatter;
+    content: React.ReactElement;
+  }
   | null
 > {
   const index = await getBlogIndex();
@@ -124,25 +126,31 @@ export async function getBlogPost(slug: string): Promise<
 
   try {
     const source = await fs.readFile(fullPath, "utf8");
+    const { content: mdxContent, data } = matter(source);
 
-    const compiled = await compileMDX<BlogFrontmatter>({
-      source,
-      options: {
-        parseFrontmatter: true,
-        mdxOptions: {
-          remarkPlugins: [remarkGfm],
-        },
-      },
+    // Use evaluate from @mdx-js/mdx with proper React runtime
+    const { default: MDXContent } = await evaluate(mdxContent, {
+      ...runtime,
+      remarkPlugins: [remarkGfm],
+      development: false, // Force production mode to avoid dev property checks
     });
+
+    // MDX components available in blog posts
+    const components = {
+      FAQSection,
+      FAQItem,
+    };
+
+    // Create proper React element with components
+    const element = MDXContent({ components }) as React.ReactElement;
 
     return {
       slug,
-      frontmatter: normalizeFrontmatter(compiled.frontmatter, slug),
-      content: compiled.content,
+      frontmatter: normalizeFrontmatter(data, slug),
+      content: element,
     };
-  } catch {
+  } catch (error) {
+    console.error(`Error compiling MDX for ${slug}:`, error);
     return null;
   }
 }
-
-

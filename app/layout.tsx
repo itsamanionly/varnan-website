@@ -88,6 +88,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${readex.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
+        suppressHydrationWarning
       >
         <TrackingScripts />
         <Analytics />
