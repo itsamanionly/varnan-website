@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
     Accordion,
     AccordionItem,
@@ -27,12 +28,25 @@ export function FAQItem({ question, children }: FAQItemProps) {
 
 type FAQSectionProps = {
     children: React.ReactNode;
+    defaultOpen?: string; // Question text of the FAQ to open by default
 };
 
-export function FAQSection({ children }: FAQSectionProps) {
+export function FAQSection({ children, defaultOpen }: FAQSectionProps) {
+    // Get the first child's question prop to use as default if not specified
+    const firstChildQuestion = React.Children.toArray(children)[0];
+    const defaultValue = defaultOpen ||
+        (React.isValidElement(firstChildQuestion)
+            ? (firstChildQuestion.props as FAQItemProps).question
+            : undefined);
+
     return (
         <div className="my-10">
-            <Accordion type="single" collapsible className="w-full space-y-2">
+            <Accordion
+                type="single"
+                collapsible
+                defaultValue={defaultValue}
+                className="w-full space-y-2"
+            >
                 {children}
             </Accordion>
         </div>
