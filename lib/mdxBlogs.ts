@@ -72,7 +72,10 @@ const getBlogIndex = cache(async (): Promise<BlogIndexItem[]> => {
 
       const fallbackSlug = filenameStem(filename);
       const fm = normalizeFrontmatter(data, fallbackSlug);
-      const baseSlug = fm.title ? slugifyTitle(fm.title) : fallbackSlug;
+
+      // Priority: explicit slug in frontmatter > slugified title > filename
+      const explicitSlug = typeof data.slug === "string" && data.slug.trim() ? data.slug.trim() : null;
+      const baseSlug = explicitSlug || (fm.title ? slugifyTitle(fm.title) : fallbackSlug);
       const slug = baseSlug || fallbackSlug;
 
       return { filename, slug, frontmatter: fm };
