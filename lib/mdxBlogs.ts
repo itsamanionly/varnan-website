@@ -14,6 +14,7 @@ export type BlogFrontmatter = {
   date: string; // ISO recommended (e.g. 2025-06-30)
   description: string;
   image?: string;
+  published?: boolean; // Default true if not specified
 };
 
 export type BlogListItem = BlogFrontmatter & {
@@ -43,8 +44,9 @@ function normalizeFrontmatter(raw: unknown, slug: string): BlogFrontmatter {
   const description =
     typeof obj.description === "string" && obj.description.trim() ? obj.description : "";
   const image = typeof obj.image === "string" && obj.image.trim() ? obj.image : undefined;
+  const published = typeof obj.published === "boolean" ? obj.published : true; // Default to true
 
-  return { title, date, description, image };
+  return { title, date, description, image, published };
 }
 
 async function getMdxFilenames(): Promise<string[]> {
@@ -96,7 +98,9 @@ const getBlogIndex = cache(async (): Promise<BlogIndexItem[]> => {
 
 export async function getAllBlogPosts(): Promise<BlogListItem[]> {
   const index = await getBlogIndex();
-  const posts = index.map(({ slug, frontmatter }) => ({ slug, ...frontmatter }));
+  const posts = index
+    .filter(({ frontmatter }) => frontmatter.published !== false) // Filter out unpublished posts
+    .map(({ slug, frontmatter }) => ({ slug, ...frontmatter }));
 
   posts.sort((a, b) => {
     // newest first; empty/invalid dates sort last
@@ -124,6 +128,9 @@ export async function getBlogPost(slug: string): Promise<
   const index = await getBlogIndex();
   const match = index.find((p) => p.slug === slug);
   if (!match) return null;
+
+  // Return null if the post is unpublished
+  if (match.frontmatter.published === false) return null;
 
   const fullPath = path.join(BLOGS_DIR, match.filename);
 
