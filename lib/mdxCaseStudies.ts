@@ -7,12 +7,15 @@ import { evaluate } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import { cache } from "react";
 import type React from "react";
+import { FAQSection, FAQItem } from "@/components/mdx/faq";
 
 export type CaseStudyFrontmatter = {
   title: string;
   date: string; // ISO recommended
   description: string;
   thumbnail?: string;
+  published?: boolean; // Default true if not specified
+  readingTime?: string;
 };
 
 export type CaseStudyListItem = CaseStudyFrontmatter & {
@@ -44,8 +47,11 @@ function normalizeFrontmatter(raw: unknown, fallbackTitle: string): CaseStudyFro
     typeof obj.description === "string" && obj.description.trim() ? obj.description : "";
   const thumbnail =
     typeof obj.thumbnail === "string" && obj.thumbnail.trim() ? obj.thumbnail : undefined;
+  const published = typeof obj.published === "boolean" ? obj.published : true;
+  const readingTime =
+    typeof obj.readingTime === "string" && obj.readingTime.trim() ? obj.readingTime : undefined;
 
-  return { title, date, description, thumbnail };
+  return { title, date, description, thumbnail, published, readingTime };
 }
 
 async function getMdxFilenames(): Promise<string[]> {
@@ -94,7 +100,9 @@ const getCaseStudiesIndex = cache(async (): Promise<CaseStudyIndexItem[]> => {
 
 export async function getAllCaseStudies(): Promise<CaseStudyListItem[]> {
   const index = await getCaseStudiesIndex();
-  const items = index.map(({ slug, frontmatter }) => ({ slug, ...frontmatter }));
+  const items = index
+    .filter(({ frontmatter }) => frontmatter.published !== false)
+    .map(({ slug, frontmatter }) => ({ slug, ...frontmatter }));
 
   items.sort((a, b) => {
     const aTime = Date.parse(a.date);
@@ -121,6 +129,7 @@ export async function getCaseStudy(slug: string): Promise<
   const index = await getCaseStudiesIndex();
   const match = index.find((p) => p.slug === slug);
   if (!match) return null;
+  if (match.frontmatter.published === false) return null;
 
   const fullPath = path.join(CASE_STUDIES_DIR, match.filename);
 
@@ -135,8 +144,14 @@ export async function getCaseStudy(slug: string): Promise<
       development: false, // Force production mode to avoid dev property checks
     });
 
-    // Create proper React element
-    const element = MDXContent({}) as React.ReactElement;
+    // MDX components available in case studies
+    const components = {
+      FAQSection,
+      FAQItem,
+    };
+
+    // Create proper React element with components
+    const element = MDXContent({ components }) as React.ReactElement;
 
     return {
       slug,

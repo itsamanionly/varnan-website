@@ -33,6 +33,7 @@ export default function CaseStudies({ items }: CaseStudiesProps) {
                 {cs.date ? (
                   <p className="text-gray-500 text-sm font-merri mt-1">
                     {new Date(cs.date).toDateString()}
+                    {cs.readingTime ? ` · ${cs.readingTime} read` : null}
                   </p>
                 ) : null}
                 <p className="mt-2 text-gray-700">{cs.description}</p>

@@ -58,6 +58,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 {cs.frontmatter.date ? (
                     <p className="text-sm text-gray-500 mb-6">
                         {new Date(cs.frontmatter.date).toDateString()}
+                        {cs.frontmatter.readingTime ? ` · ${cs.frontmatter.readingTime} read` : null}
                     </p>
                 ) : null}
                 <div className="prose prose-lg max-w-none">{cs.content}</div>

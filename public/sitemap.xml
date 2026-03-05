@@ -71,6 +71,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Case Study: 8500+ GitHub Stars across 7 Dev Tools -->
+  <url>
+    <loc>https://varnan.tech/case-studies/8500-github-stars-across-7-dev-tools-varnan-s-predictable-distribution-engine</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- =====================================================================
        BLOG POSTS
        ====================================================================== -->

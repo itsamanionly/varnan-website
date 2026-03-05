@@ -18,7 +18,7 @@ export const Footer = () => {
                     </Link>
                 </div>
                 <p>
-                    Copyright © 2025 <span className='font-semibold'>varnan</span>
+                    Copyright © 2026 <span className='font-semibold'>varnan</span>
                 </p>
             </div>
         </footer>
