@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { CaseStudyListItem } from "@/lib/mdxCaseStudies";
 
 type CaseStudiesProps = {
@@ -20,11 +21,14 @@ export default function CaseStudies({ items }: CaseStudiesProps) {
               <div className="p-4 border border-gray-200 rounded-lg shadow-lg h-full bg-white">
                 <Link href={`/case-studies/${cs.slug}`}>
                   {cs.thumbnail ? (
-                    <img
-                      src={cs.thumbnail}
-                      alt={cs.title}
-                      className="w-full object-cover rounded-md mb-4"
-                    />
+                    <div className="relative w-full h-48 mb-4">
+                      <Image
+                        src={cs.thumbnail}
+                        alt={cs.title}
+                        fill
+                        className="object-cover rounded-md"
+                      />
+                    </div>
                   ) : null}
                   {/* <h2 className="text-xl font-semibold text-black font-merri">
                     {cs.title}

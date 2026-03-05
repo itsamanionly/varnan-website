@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
@@ -85,10 +86,11 @@ export const Founders = () => {
                         >
                             {/* Image */}
                             <div className="relative mx-auto mb-8 h-64 w-64 overflow-hidden rounded-full border-2 border-border bg-muted">
-                                <img
+                                <Image
                                     src={member.image}
                                     alt={member.name}
-                                    className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                                    fill
+                                    className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
                                 />
                             </div>
 

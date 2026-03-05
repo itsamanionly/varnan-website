@@ -97,6 +97,7 @@ export default async function Newsletter() {
             className="rounded-2xl border border-gray-200 shadow hover:shadow-md transition overflow-hidden bg-white flex flex-col"
           >
             {post.image && (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={post.image}
                 alt={post.title}

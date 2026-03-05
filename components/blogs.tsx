@@ -1,5 +1,6 @@
 // components/blogs.tsx
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogListItem } from "@/lib/mdxBlogs";
 
 type BlogsProps = {
@@ -21,11 +22,14 @@ export default function Blogs({ posts }: BlogsProps) {
               <div className="p-4 border border-gray-200 rounded-lg shadow-lg h-full bg-white">
                 <Link href={`/blog/${post.slug}`}>
                   {post.image && (
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full object-cover rounded-md mb-4"
-                    />
+                    <div className="relative w-full h-48 mb-4">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover rounded-md"
+                      />
+                    </div>
                   )}
                   <h2 className="text-xl font-semibold text-black font-merri">
                     {post.title}
