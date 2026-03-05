@@ -21,10 +21,16 @@ export const LandingBlogContainer = ({ posts }: { posts: { title: string, descri
 
                     <div className="p-4 flex flex-col flex-grow">
                         {/* <h2 className="text-xl font-semibold text-gray-800 mb-4">{post.title}</h2> */}
-                        <div className="flex justify-between items-center">
-                            <p className="text-sm text-gray-500 mb-2">Author: <span className="font-bold text-blue-600">{post.author}</span></p>
-                            <p className="text-sm text-gray-500 mb-2">{post.readTime}</p>
-                        </div>
+                        {(post.author || post.readTime) && (
+                            <div className="flex justify-between items-center">
+                                {post.author && (
+                                    <p className="text-sm text-gray-500 mb-2">Author: <span className="font-bold text-blue-600">{post.author}</span></p>
+                                )}
+                                {post.readTime && (
+                                    <p className="text-sm text-gray-500 mb-2">{post.readTime}</p>
+                                )}
+                            </div>
+                        )}
                         <p className="text-gray-700 text-sm flex-grow">{post.description}</p>
                         {/* <span className="mt-4 text-blue-600 text-sm font-medium hover:underline">Read more →</span> */}
                     </div>

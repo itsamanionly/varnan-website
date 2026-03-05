@@ -11,8 +11,10 @@ import { Stats } from '@/components/stats'
 import { Testimonials } from '@/components/testimonials'
 import { Tree } from '@/components/tree'
 import React from 'react'
+import { getAllCaseStudies } from '@/lib/mdxCaseStudies'
 
-const HomePage = () => {
+const HomePage = async () => {
+  const caseStudies = await getAllCaseStudies();
   return (
     <main className='bg-white text-black'>
       <div className='container mx-auto px-2'>
@@ -26,7 +28,7 @@ const HomePage = () => {
       </div>
       <Contact />
       <Founders />
-      <LandingBlogs />
+      <LandingBlogs items={caseStudies.slice(0, 3)} />
       <Faq />
       <Footer />
     </main>

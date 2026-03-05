@@ -1,4 +1,9 @@
-# Varnan
+import { getAllCaseStudies } from '@/lib/mdxCaseStudies';
+import { getAllBlogPosts } from '@/lib/mdxBlogs';
+
+const BASE = 'https://varnan.tech';
+
+const STATIC_HEADER = `# Varnan
 
 > Varnan is a GTM (Go-to-Market) agency for AI startups and developer tools companies. We help AI founders build predictable user growth through positioning, content-driven distribution, and strategic launches—without guesswork or a full marketing team. Results in 90 days or we work free.
 
@@ -38,25 +43,9 @@ Varnan uses a proven three-phase approach to take AI companies from positioning 
 - Design partner and early champion recruitment
 - PR and media narratives aligned with positioning
 - Community and advocacy loops to sustain momentum
-- Outcome: A repeatable launch playbook generating $10K+ pipeline per drop
+- Outcome: A repeatable launch playbook generating $10K+ pipeline per drop`;
 
-## Case Studies
-
-- [8,500+ GitHub Stars Across 7 Dev Tools: Predictable Distribution Engine](https://varnan.tech/case-studies/8500-github-stars-across-7-dev-tools-varnan-s-predictable-distribution-engine): How Varnan generated 8,500+ GitHub stars across 7 open-source projects (LibrePods, Macless-Haystack, CraftGPT, PicoClaw, Shannon, AirLLM, Pixel Agents) through strategic short-form video content, with consistent 25-35% comment-to-star conversion and 3.7M+ combined views
-- [Server Survival: 1,000+ GitHub Stars in 90 Days](https://varnan.tech/case-studies/how-varnan-helped-server-survival-gained-1000-github-stars-and-built-an-active-contributor-base-in-90-days): How Varnan helped an open-source tower defense game that teaches cloud architecture break through in a crowded developer education market, driving 1,000+ GitHub stars and contributor growth
-- [Athina AI (YC W23): Reddit as Primary Growth Channel](https://varnan.tech/case-studies/how-varnan-turned-reddit-into-athina-s-yc-w23-primary-growth-channel-without-getting-blocked): How Varnan used value-first Reddit strategy to drive 15-20x user growth, 10K+ upvotes, enterprise customers, low CAC, and AI search visibility for a YC-backed LLM observability platform
-- [6,000+ GitHub Stars Through Strategic Content](https://varnan.tech/case-studies/from-invisible-to-inevitable-how-strategic-content-by-varnan-generated-6000-github-stars): How Varnan used strategic video distribution to reach technical audiences, driving 6,000+ GitHub stars in weeks, major tech press coverage, and measurable community activation for three open-source projects
-
-## Blog Posts
-
-- [When Do You Need a Go-to-Market Strategy? GTM Framework for Startup Founders](https://varnan.tech/blog/when-do-you-need-a-go-to-market-strategy-a-straight-answer-for-founders): Learn the 5 situations when you actually need a GTM strategy, how GTM differs from marketing, and a practical 5-step framework for AI and SaaS startups
-- [Generate Viral Meme Videos Using No-Code AI Agents](https://varnan.tech/blog/generate-viral-meme-videos-for-your-business-using-no-code-ai-agents): How we built an automated meme-to-video pipeline (n8n + OpenAI + FFmpeg) that creates ready-to-post vertical videos in minutes
-- [100x UX Research AI Agent](https://varnan.tech/blog/100x-ux-research-ai-agent-finding-why-products-fail-using-reddit-and-hacker-news): How we built a no-code UX research assistant that pulls real pain points from Reddit and Hacker News and turns them into actionable reports
-- [No-Code AI Agent for GTM Strategy](https://varnan.tech/blog/no-code-ai-agent-for-building-an-actionable-gtm-strategy-for-your-startup): A scalable no-code GTM agent that tracks competitors and turns real-time signals into an actionable go-to-market strategy
-- [Track Competition with No-Code AI Agents](https://varnan.tech/blog/how-do-we-keep-track-of-competition-with-no-code-ai-agents-demo): A no-code competitor tracking agent that listens to signals across the internet, filters noise with AI, and ships key updates into Slack or Google Sheets
-- [First 100 Users for Your AI Product](https://varnan.tech/blog/first-100-users-for-your-ai-product-lessons-from-our-2-yc-portfolio-companies): A practical playbook to get your first 100 real users by going deep in niche communities, trend-hacking, and telling a pattern story series—lessons from two YC portfolio companies
-
-## Newsletter: The Distribution Layer
+const STATIC_FOOTER = `## Newsletter: The Distribution Layer
 
 Growth playbooks from real companies, published on Beehiiv:
 
@@ -123,4 +112,31 @@ For case study references:
 - [How Founders Are Quietly Using Reddit to Win](https://distributionlayer.beehiiv.com/p/how-founders-are-quietly-using-reddit-to-win): Using Reddit to test ideas, build trust, find users, and turn every post into content, proof, and traction
 - [5 Easy Shortcuts to Build an AI Agent](https://distributionlayer.beehiiv.com/p/5-easy-shortcuts-to-built-an-ai-agent): How to actually launch an AI agent this week without wasting months
 - [Why Haven't You Hit $1K MRR Yet?](https://distributionlayer.beehiiv.com/p/why-haven-t-you-hit-1k-mrr-yet): 3 zero-budget growth plays founders are using right now
-- [Want AI Traffic? Here's the Exact Stack We'd Use Today](https://distributionlayer.beehiiv.com/p/want-ai-traffic-here-the-exact-stack-we-would-use-today-bythedistributionlayer): The stack we're using, the play we'd run today, and prompts that pull secrets from startups
+- [Want AI Traffic? Here's the Exact Stack We'd Use Today](https://distributionlayer.beehiiv.com/p/want-ai-traffic-here-the-exact-stack-we-would-use-today-bythedistributionlayer): The stack we're using, the play we'd run today, and prompts that pull secrets from startups`;
+
+export async function GET() {
+  const [cases, blogs] = await Promise.all([getAllCaseStudies(), getAllBlogPosts()]);
+
+  const caseStudiesSection =
+    '## Case Studies\n\n' +
+    cases
+      .map((cs) => `- [${cs.title}](${BASE}/case-studies/${cs.slug}): ${cs.description}`)
+      .join('\n');
+
+  const blogPostsSection =
+    '## Blog Posts\n\n' +
+    blogs
+      .map((b) => `- [${b.title}](${BASE}/blog/${b.slug}): ${b.description}`)
+      .join('\n');
+
+  const body = [STATIC_HEADER, caseStudiesSection, blogPostsSection, STATIC_FOOTER].join(
+    '\n\n'
+  );
+
+  return new Response(body, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+    },
+  });
+}
