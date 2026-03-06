@@ -13,39 +13,41 @@ export const Testimonials = () => {
                 {/* First row of cards */}
                 <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mx-auto mt-10 mb-4 lg:mb-10 max-w-4xl'>
                     <Card className='bg-white drop-shadow-sm'>
-                        <Image 
-                            src="/tipsy-1.jpg" 
-                            width={150} 
-                            height={100} 
-                            alt="tipsy" 
-                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full' 
+                        <Image
+                            src="/scott-ai-clean.png"
+                            width={130}
+                            height={34}
+                            alt="scott ai"
+                            unoptimized
+                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full'
                         />
                     </Card>
                     <Card className='bg-white drop-shadow-sm'>
-                        <Image 
-                            src="/athina-ai.png" 
-                            width={150} 
-                            height={100} 
-                            alt="athina ai" 
-                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full' 
+                        <Image
+                            src="/athina-ai.png"
+                            width={150}
+                            height={100}
+                            alt="athina ai"
+                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full'
                         />
                     </Card>
                     <Card className='bg-white drop-shadow-sm'>
-                        <Image 
-                            src="/unify-ai.svg" 
-                            width={150} 
-                            height={100} 
-                            alt="unify ai" 
-                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full' 
+                        <Image
+                            src="/unify-ai.svg"
+                            width={150}
+                            height={100}
+                            alt="unify ai"
+                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full'
                         />
                     </Card>
                     <Card className='bg-white drop-shadow-sm'>
-                        <Image 
-                            src="/Amdocs.png" 
-                            width={150} 
-                            height={100} 
-                            alt="amdocs" 
-                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full' 
+                        <Image
+                            src="/bytespace-clean.png"
+                            width={150}
+                            height={100}
+                            alt="bytespace"
+                            unoptimized
+                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full'
                         />
                     </Card>
                 </div>
@@ -80,12 +82,13 @@ export const Testimonials = () => {
                         />
                     </Card>
                     <Card className='bg-white drop-shadow-sm'>
-                        <Image 
-                            src="/undermind.png" 
-                            width={120} 
-                            height={100} 
-                            alt="undermind" 
-                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full' 
+                        <Image
+                            src="/undermind.png"
+                            width={120}
+                            height={40}
+                            alt="undermind"
+                            unoptimized
+                            className='grayscale object-contain w-auto h-auto max-w-full max-h-full'
                         />
                     </Card>
                 </div>

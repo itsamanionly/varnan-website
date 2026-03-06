@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer'
 import { ForYou } from '@/components/for-you'
 import { Founders } from '@/components/founders'
 import { Hero } from '@/components/hero'
+import { Impact } from '@/components/impact'
 import { LandingBlogs } from '@/components/landing-blogs'
 import { Navbar } from '@/components/navbar'
 import { Phases } from '@/components/phases'
@@ -24,6 +25,7 @@ const HomePage = async () => {
         <Tree />
         <Phases />
         <Stats />
+        <Impact />
         <ForYou />
       </div>
       <Contact />
