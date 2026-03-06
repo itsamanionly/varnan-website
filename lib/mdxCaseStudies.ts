@@ -7,6 +7,7 @@ import { evaluate } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import { cache } from "react";
 import type React from "react";
+import { FAQSection, FAQItem } from "@/components/mdx/faq";
 
 export type CaseStudyFrontmatter = {
   title: string;
@@ -142,9 +143,6 @@ export async function getCaseStudy(slug: string): Promise<
       remarkPlugins: [remarkGfm],
       development: false, // Force production mode to avoid dev property checks
     });
-
-    // Dynamically import client components for the RSC boundary
-    const { FAQSection, FAQItem } = await import("@/components/mdx/faq");
 
     // MDX components available in case studies
     const components = {
