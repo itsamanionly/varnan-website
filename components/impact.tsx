@@ -6,6 +6,7 @@ const projects = [
     { name: "LibrePods", stars: "5,500+", views: "600K", barWidth: "100%", highlight: true, href: "https://github.com/kavishdevar/librepods" },
     { name: "Git City", stars: "1,540+", views: "1M+", barWidth: "28%", highlight: true, href: "https://github.com/srizzon/git-city" },
     { name: "PicoClaw", stars: "1,500+", views: "1M+", barWidth: "27%", highlight: true, href: "https://github.com/sipeed/picoclaw" },
+    { name: "Server Survival", stars: "1,000+", views: "534K", barWidth: "18%", highlight: true, href: "https://github.com/pshenok/server-survival" },
     { name: "Shannon", stars: "500+", views: "380K", barWidth: "9%", highlight: false, href: "https://github.com/KeygraphHQ/shannon" },
     { name: "Macless-Haystack", stars: "450+", views: "500K", barWidth: "8%", highlight: false, href: "https://github.com/dchristl/macless-haystack" },
     { name: "AirLLM", stars: "250+", views: "226K", barWidth: "5%", highlight: false, href: "https://github.com/lyogavin/airllm" },
@@ -31,8 +32,8 @@ export const Impact = () => {
 
                 {/* Heading */}
                 <h2 className="text-4xl sm:text-5xl md:text-5xl font-black text-black text-center tracking-tighter leading-tight mb-4">
-                    10,000+ GitHub Stars.<br />
-                    9 Projects. One GTM Playbook.
+                    11,000+ GitHub Stars.<br />
+                    10 Projects. One GTM Playbook.
                 </h2>
 
                 {/* Subtitle */}
@@ -43,15 +44,15 @@ export const Impact = () => {
                 {/* Stats grid */}
                 <div className="grid grid-cols-3 border-2 border-black mb-4 bg-white">
                     <div className="px-2 py-4 sm:px-4 sm:py-6 text-center border-r-2 border-black">
-                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">10,000+</span>
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">11,000+</span>
                         <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Stars Generated</div>
                     </div>
                     <div className="px-2 py-4 sm:px-4 sm:py-6 text-center border-r-2 border-black">
-                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">5.7M+</span>
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">6.2M+</span>
                         <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Content Views</div>
                     </div>
                     <div className="px-2 py-4 sm:px-4 sm:py-6 text-center">
-                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">9</span>
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">10</span>
                         <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Projects Scaled</div>
                     </div>
                 </div>
@@ -98,8 +99,8 @@ export const Impact = () => {
                     {/* Total row */}
                     <div className="grid grid-cols-[1fr_56px_60px] sm:grid-cols-[1fr_90px_140px] px-3 sm:px-4 py-3 sm:py-3.5 bg-gray-50 border-t-2 border-black items-center gap-2">
                         <div className="text-[10px] font-black uppercase tracking-widest text-gray-500">Total</div>
-                        <div className="text-xs sm:text-sm font-black">10,296+</div>
-                        <div className="text-[10px] sm:text-[11px] text-gray-500">5.7M+ views</div>
+                        <div className="text-xs sm:text-sm font-black">11,296+</div>
+                        <div className="text-[10px] sm:text-[11px] text-gray-500">6.2M+ views</div>
                     </div>
                 </div>
             </div>
