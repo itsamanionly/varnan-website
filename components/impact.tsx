@@ -42,24 +42,24 @@ export const Impact = () => {
 
                 {/* Stats grid */}
                 <div className="grid grid-cols-3 border-2 border-black mb-4 bg-white">
-                    <div className="px-4 py-6 text-center border-r-2 border-black">
-                        <span className="block text-3xl sm:text-4xl font-black tracking-tighter leading-none mb-2">10,000+</span>
-                        <div className="text-[10px] text-gray-500 uppercase tracking-widest font-medium">Stars Generated</div>
+                    <div className="px-2 py-4 sm:px-4 sm:py-6 text-center border-r-2 border-black">
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">10,000+</span>
+                        <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Stars Generated</div>
                     </div>
-                    <div className="px-4 py-6 text-center border-r-2 border-black">
-                        <span className="block text-3xl sm:text-4xl font-black tracking-tighter leading-none mb-2">5.7M+</span>
-                        <div className="text-[10px] text-gray-500 uppercase tracking-widest font-medium">Content Views</div>
+                    <div className="px-2 py-4 sm:px-4 sm:py-6 text-center border-r-2 border-black">
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">5.7M+</span>
+                        <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Content Views</div>
                     </div>
-                    <div className="px-4 py-6 text-center">
-                        <span className="block text-3xl sm:text-4xl font-black tracking-tighter leading-none mb-2">9</span>
-                        <div className="text-[10px] text-gray-500 uppercase tracking-widest font-medium">Projects Scaled</div>
+                    <div className="px-2 py-4 sm:px-4 sm:py-6 text-center">
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">9</span>
+                        <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Projects Scaled</div>
                     </div>
                 </div>
 
                 {/* Projects table */}
                 <div className="border-2 border-black bg-white overflow-hidden">
                     {/* Table header */}
-                    <div className="grid grid-cols-[1fr_80px_120px] sm:grid-cols-[1fr_90px_140px] px-4 py-2.5 bg-black gap-2">
+                    <div className="grid grid-cols-[1fr_56px_60px] sm:grid-cols-[1fr_90px_140px] px-3 sm:px-4 py-2.5 bg-black gap-2">
                         <span className="text-[10px] font-bold tracking-widest uppercase text-white">Project</span>
                         <span className="text-[10px] font-bold tracking-widest uppercase text-gray-500">Stars</span>
                         <span className="text-[10px] font-bold tracking-widest uppercase text-gray-500">Views</span>
@@ -69,37 +69,37 @@ export const Impact = () => {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="grid grid-cols-[1fr_80px_120px] sm:grid-cols-[1fr_90px_140px] px-4 py-3.5 border-b border-gray-100 items-center gap-2 hover:bg-gray-50 transition-colors duration-150 last:border-b-0"
+                            className="grid grid-cols-[1fr_56px_60px] sm:grid-cols-[1fr_90px_140px] px-3 sm:px-4 py-3 sm:py-3.5 border-b border-gray-100 items-center gap-2 hover:bg-gray-50 transition-colors duration-150 last:border-b-0"
                         >
-                            <div className="flex items-center gap-2 text-sm font-bold min-w-0">
+                            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
                                 <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${project.highlight ? 'bg-black' : 'bg-gray-400'}`} />
                                 <Link
                                     href={project.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="truncate border-b border-gray-200 hover:border-black transition-colors duration-150"
+                                    className="truncate text-xs sm:text-sm font-bold border-b border-gray-200 hover:border-black transition-colors duration-150"
                                 >
                                     {project.name}
                                 </Link>
                             </div>
-                            <div className="text-sm font-bold text-black">{project.stars}</div>
-                            <div className="flex items-center gap-2">
-                                <div className="flex-1 h-[3px] bg-gray-100 rounded-full overflow-hidden">
+                            <div className="text-xs sm:text-sm font-bold text-black">{project.stars}</div>
+                            <div className="flex items-center gap-1 sm:gap-2">
+                                <div className="hidden sm:block flex-1 h-[3px] bg-gray-100 rounded-full overflow-hidden">
                                     <div
                                         className={`h-full rounded-full ${project.highlight ? 'bg-black' : 'bg-gray-400'}`}
                                         style={{ width: project.barWidth }}
                                     />
                                 </div>
-                                <span className="text-[11px] text-gray-400 whitespace-nowrap min-w-[36px] text-right">{project.views}</span>
+                                <span className="text-[10px] sm:text-[11px] text-gray-400 whitespace-nowrap text-right">{project.views}</span>
                             </div>
                         </div>
                     ))}
 
                     {/* Total row */}
-                    <div className="grid grid-cols-[1fr_80px_120px] sm:grid-cols-[1fr_90px_140px] px-4 py-3.5 bg-gray-50 border-t-2 border-black items-center gap-2">
+                    <div className="grid grid-cols-[1fr_56px_60px] sm:grid-cols-[1fr_90px_140px] px-3 sm:px-4 py-3 sm:py-3.5 bg-gray-50 border-t-2 border-black items-center gap-2">
                         <div className="text-[10px] font-black uppercase tracking-widest text-gray-500">Total</div>
-                        <div className="text-sm font-black">10,296+</div>
-                        <div className="text-[11px] text-gray-500">5.7M+ views</div>
+                        <div className="text-xs sm:text-sm font-black">10,296+</div>
+                        <div className="text-[10px] sm:text-[11px] text-gray-500">5.7M+ views</div>
                     </div>
                 </div>
             </div>
