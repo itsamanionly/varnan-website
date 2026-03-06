@@ -3,17 +3,25 @@ import React from 'react'
 import Link from 'next/link'
 
 const projects = [
-    { name: "LibrePods", stars: "5,500+", views: "600K", barWidth: "100%", highlight: true, href: "https://github.com/kavishdevar/librepods" },
-    { name: "Git City", stars: "1,540+", views: "1M+", barWidth: "28%", highlight: true, href: "https://github.com/srizzon/git-city" },
-    { name: "PicoClaw", stars: "1,500+", views: "1M+", barWidth: "27%", highlight: true, href: "https://github.com/sipeed/picoclaw" },
-    { name: "Server Survival", stars: "1,000+", views: "534K", barWidth: "18%", highlight: true, href: "https://github.com/pshenok/server-survival" },
-    { name: "Shannon", stars: "500+", views: "380K", barWidth: "9%", highlight: false, href: "https://github.com/KeygraphHQ/shannon" },
-    { name: "Macless-Haystack", stars: "450+", views: "500K", barWidth: "8%", highlight: false, href: "https://github.com/dchristl/macless-haystack" },
-    { name: "AirLLM", stars: "250+", views: "226K", barWidth: "5%", highlight: false, href: "https://github.com/lyogavin/airllm" },
-    { name: "CraftGPT", stars: "180+", views: "343K", barWidth: "3%", highlight: false, href: "https://github.com/zizmax/CraftGPT" },
-    { name: "Pixel Agents", stars: "200+", views: "99K", barWidth: "3%", highlight: false, href: "https://github.com/pablodelucca/pixel-agents" },
-    { name: "Android-MCP", stars: "100+", views: "93K", barWidth: "1%", highlight: false, href: "https://github.com/ulcica/android-mcp" },
+    { name: "LibrePods", stars: "5,500+", views: "490K+", barWidth: "100%", highlight: true, href: "https://github.com/kavishdevar/librepods", instagram: "https://www.instagram.com/reel/DRY3nPaEhQM/?igsh=NTY1ajNrd3Y4NW9u" },
+    { name: "Git City", stars: "1,540+", views: "1M+", barWidth: "28%", highlight: true, href: "https://github.com/srizzon/git-city", instagram: "https://www.instagram.com/reel/DVbEJoUktVg/?igsh=MThpaXFkZHlsOTJzeQ==" },
+    { name: "PicoClaw", stars: "1,500+", views: "450K+", barWidth: "27%", highlight: true, href: "https://github.com/sipeed/picoclaw", instagram: "https://www.instagram.com/reel/DU3STPtkna5/?igsh=MTU4ZndvemdrbWVmag==" },
+    { name: "Server Survival", stars: "1,000+", views: "180K+", barWidth: "18%", highlight: true, href: "https://github.com/pshenok/server-survival", instagram: "https://www.instagram.com/reel/DR6XS5TkuQm/?igsh=NGp6eHEwZnl0NzQy" },
+    { name: "Shannon", stars: "500+", views: "390K+", barWidth: "9%", highlight: false, href: "https://github.com/KeygraphHQ/shannon", instagram: "https://www.instagram.com/reel/DUfL99jkrKB/?igsh=ajN2eWV4YXMwcXFw" },
+    { name: "Macless-Haystack", stars: "450+", views: "450K+", barWidth: "8%", highlight: false, href: "https://github.com/dchristl/macless-haystack", instagram: "https://www.instagram.com/reel/DRws5zmkiU-/?igsh=dHpubXFsNnV6cGps" },
+    { name: "AirLLM", stars: "250+", views: "220K+", barWidth: "5%", highlight: false, href: "https://github.com/lyogavin/airllm", instagram: "https://www.instagram.com/reel/DVOfaRAkuj2/?igsh=aTRxcTZ2bXBmcHl3" },
+    { name: "CraftGPT", stars: "180+", views: "343K+", barWidth: "3%", highlight: false, href: "https://github.com/zizmax/CraftGPT", instagram: "https://www.instagram.com/reel/DPTnLNWgTQo" },
+    { name: "Pixel Agents", stars: "200+", views: "160K+", barWidth: "3%", highlight: false, href: "https://github.com/pablodelucca/pixel-agents", instagram: "https://www.instagram.com/reel/DVVSUT1ki9B/?igsh=MW5nbDhxN3FpdG5ybw==" },
+    { name: "Android-MCP", stars: "100+", views: "70K+", barWidth: "1%", highlight: false, href: "https://github.com/ulcica/android-mcp", instagram: "https://www.instagram.com/reel/DTSiN8CEiN-/?igsh=MWRvMXg4NmExMWU1" },
 ]
+
+const InstagramIcon = () => (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+)
 
 export const Impact = () => {
     return (
@@ -78,10 +86,21 @@ export const Impact = () => {
                                     href={project.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="truncate text-xs sm:text-sm font-bold border-b border-gray-200 hover:border-black transition-colors duration-150"
+                                    className="truncate text-xs sm:text-sm font-bold border-b border-gray-200 hover:border-black transition-colors duration-150 min-w-0"
                                 >
                                     {project.name}
                                 </Link>
+                                {project.instagram && (
+                                    <Link
+                                        href={project.instagram}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors duration-150"
+                                        title="Watch Reel"
+                                    >
+                                        <InstagramIcon />
+                                    </Link>
+                                )}
                             </div>
                             <div className="text-xs sm:text-sm font-bold text-black">{project.stars}</div>
                             <div className="flex items-center gap-1 sm:gap-2">
@@ -100,7 +119,7 @@ export const Impact = () => {
                     <div className="grid grid-cols-[1fr_56px_60px] sm:grid-cols-[1fr_90px_140px] px-3 sm:px-4 py-3 sm:py-3.5 bg-gray-50 border-t-2 border-black items-center gap-2">
                         <div className="text-[10px] font-black uppercase tracking-widest text-gray-500">Total</div>
                         <div className="text-xs sm:text-sm font-black">11,296+</div>
-                        <div className="text-[10px] sm:text-[11px] text-gray-500">6.2M+ views</div>
+                        <div className="text-[10px] sm:text-[11px] text-gray-500">3.8M+ views</div>
                     </div>
                 </div>
             </div>
