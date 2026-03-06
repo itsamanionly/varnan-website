@@ -56,7 +56,7 @@ export const Impact = () => {
                         <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Stars Generated</div>
                     </div>
                     <div className="px-2 py-4 sm:px-4 sm:py-6 text-center border-r-2 border-black">
-                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">6.2M+</span>
+                        <span className="block text-xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none mb-1.5 sm:mb-2">4.2M+</span>
                         <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest font-medium">Content Views</div>
                     </div>
                     <div className="px-2 py-4 sm:px-4 sm:py-6 text-center">
