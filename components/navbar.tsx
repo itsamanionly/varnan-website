@@ -46,10 +46,10 @@ const ResourcesDropdown = () => {
             Blogs
           </Link>
           <Link
-            href="/trending-tools"
+            href="/hot-trends"
             className="block font-semibold text-black px-4 py-2 text-md text-gray-700"
           >
-            Trending Tools
+            Hot Trends
           </Link>
           <Link
             href="/growth-strategies"

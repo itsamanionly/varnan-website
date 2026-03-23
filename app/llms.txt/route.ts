@@ -1,6 +1,6 @@
 import { getAllCaseStudies } from '@/lib/mdxCaseStudies';
 import { getAllBlogPosts } from '@/lib/mdxBlogs';
-import { getAllTrendingToolPosts } from '@/lib/mdxTrendingTools';
+import { getAllTrendingToolPosts } from '@/lib/mdxHotTrends';
 
 const BASE = 'https://varnan.tech';
 
@@ -19,7 +19,7 @@ Trusted by: Athina AI, Unify AI, Composio, Langbase, DigitalOcean, Amdocs, Tipsy
 - [Homepage](https://varnan.tech): Main landing page with service overview, three-phase methodology, success metrics, and founder information
 - [Case Studies](https://varnan.tech/case-studies): Real examples of how Varnan drove user acquisition and growth for AI startups and developer tools
 - [Blog](https://varnan.tech/blog): Technical content on AI automation, GTM strategies, and growth playbooks
-- [Trending Tools](https://varnan.tech/trending-tools): Discover the best open-source tools and repositories to upgrade your AI agent
+- [Hot Trends](https://varnan.tech/hot-trends): Discover the best open-source tools and repositories to upgrade your AI agent
 - [Growth Strategies Newsletter](https://varnan.tech/growth-strategies): The Distribution Layer newsletter—real growth playbooks from real companies
 
 ## Our Three-Phase Methodology
@@ -117,7 +117,7 @@ For case study references:
 - [Want AI Traffic? Here's the Exact Stack We'd Use Today](https://distributionlayer.beehiiv.com/p/want-ai-traffic-here-the-exact-stack-we-would-use-today-bythedistributionlayer): The stack we're using, the play we'd run today, and prompts that pull secrets from startups`;
 
 export async function GET() {
-  const [cases, blogs, trendingTools] = await Promise.all([getAllCaseStudies(), getAllBlogPosts(), getAllTrendingToolPosts()]);
+  const [cases, blogs, hotTrends] = await Promise.all([getAllCaseStudies(), getAllBlogPosts(), getAllTrendingToolPosts()]);
 
   const caseStudiesSection =
     '## Case Studies\n\n' +
@@ -131,13 +131,13 @@ export async function GET() {
       .map((b) => `- [${b.title}](${BASE}/blog/${b.slug}): ${b.description}`)
       .join('\n');
 
-  const trendingToolsSection =
-    '## Trending Tools\n\n' +
-    trendingTools
-      .map((t) => `- [${t.title}](${BASE}/trending-tools/${t.slug}): ${t.description}`)
+  const hotTrendsSection =
+    '## Hot Trends\n\n' +
+    hotTrends
+      .map((t) => `- [${t.title}](${BASE}/hot-trends/${t.slug}): ${t.description}`)
       .join('\n');
 
-  const body = [STATIC_HEADER, caseStudiesSection, blogPostsSection, trendingToolsSection, STATIC_FOOTER].join(
+  const body = [STATIC_HEADER, caseStudiesSection, blogPostsSection, hotTrendsSection, STATIC_FOOTER].join(
     '\n\n'
   );
 

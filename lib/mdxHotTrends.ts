@@ -22,7 +22,7 @@ export type TrendingToolListItem = TrendingToolFrontmatter & {
   slug: string;
 };
 
-const TRENDING_TOOLS_DIR = path.join(process.cwd(), "trending-tools");
+const HOT_TRENDS_DIR = path.join(process.cwd(), "hot-trends");
 
 function filenameStem(filename: string) {
   return filename.replace(/\.mdx$/i, "");
@@ -52,7 +52,7 @@ function normalizeFrontmatter(raw: unknown, slug: string): TrendingToolFrontmatt
 }
 
 async function getMdxFilenames(): Promise<string[]> {
-  const entries = await fs.readdir(TRENDING_TOOLS_DIR, { withFileTypes: true });
+  const entries = await fs.readdir(HOT_TRENDS_DIR, { withFileTypes: true });
   return entries
     .filter((e) => e.isFile() && e.name.toLowerCase().endsWith(".mdx"))
     .map((e) => e.name)
@@ -65,12 +65,12 @@ type TrendingToolIndexItem = {
   frontmatter: TrendingToolFrontmatter;
 };
 
-const getTrendingToolsIndex = cache(async (): Promise<TrendingToolIndexItem[]> => {
+const getHotTrendsIndex = cache(async (): Promise<TrendingToolIndexItem[]> => {
   const filenames = await getMdxFilenames();
 
   const items = await Promise.all(
     filenames.map(async (filename) => {
-      const fullPath = path.join(TRENDING_TOOLS_DIR, filename);
+      const fullPath = path.join(HOT_TRENDS_DIR, filename);
       const file = await fs.readFile(fullPath, "utf8");
       const { data } = matter(file);
 
@@ -99,7 +99,7 @@ const getTrendingToolsIndex = cache(async (): Promise<TrendingToolIndexItem[]> =
 });
 
 export async function getAllTrendingToolPosts(): Promise<TrendingToolListItem[]> {
-  const index = await getTrendingToolsIndex();
+  const index = await getHotTrendsIndex();
   const posts = index
     .filter(({ frontmatter }) => frontmatter.published !== false) // Filter out unpublished posts
     .map(({ slug, frontmatter }) => ({ slug, ...frontmatter }));
@@ -127,14 +127,14 @@ export async function getTrendingToolPost(slug: string): Promise<
   }
   | null
 > {
-  const index = await getTrendingToolsIndex();
+  const index = await getHotTrendsIndex();
   const match = index.find((p) => p.slug === slug);
   if (!match) return null;
 
   // Return null if the post is unpublished
   if (match.frontmatter.published === false) return null;
 
-  const fullPath = path.join(TRENDING_TOOLS_DIR, match.filename);
+  const fullPath = path.join(HOT_TRENDS_DIR, match.filename);
 
   try {
     const source = await fs.readFile(fullPath, "utf8");
@@ -147,7 +147,7 @@ export async function getTrendingToolPost(slug: string): Promise<
       development: false, // Force production mode to avoid dev property checks
     });
 
-    // MDX components available in trendingTool posts
+    // MDX components available in hotTrend posts
     const components = {
       FAQSection,
       FAQItem,

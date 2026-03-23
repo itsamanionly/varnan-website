@@ -1,11 +1,11 @@
-import TrendingTools from "@/components/trending-tools";
+import HotTrends from "@/components/hot-trends";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { getAllTrendingToolPosts } from "@/lib/mdxTrendingTools";
+import { getAllTrendingToolPosts } from "@/lib/mdxHotTrends";
 
 export const revalidate = 3600;
 
-export default async function TrendingToolsPage() {
+export default async function HotTrendsPage() {
   const posts = (await getAllTrendingToolPosts()).sort((a, b) => {
     const dateA = new Date(a.date ?? 0).getTime();
     const dateB = new Date(b.date ?? 0).getTime();
@@ -17,7 +17,7 @@ export default async function TrendingToolsPage() {
         <Navbar />
       </div>
       <main className="flex-grow flex flex-col">
-        <TrendingTools posts={posts} />
+        <HotTrends posts={posts} />
       </main>
       <div className="mt-auto">
         <Footer />

@@ -1,0 +1,1 @@
+- Next.js build failed with `ENOENT: no such file or directory, open '.next/server/pages-manifest.json'` due to multiple lockfiles detected in parent directories. Verified code correctness with `npm run lint` and `npx tsc --noEmit` instead.

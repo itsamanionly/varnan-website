@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { getAllTrendingToolPosts, getTrendingToolPost } from "@/lib/mdxTrendingTools";
+import { getAllTrendingToolPosts, getTrendingToolPost } from "@/lib/mdxHotTrends";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
