@@ -22,7 +22,7 @@ export default function TrendingTools({ posts }: TrendingToolsProps) {
             <div key={index} className="w-full">
               <Link href={`/trending-tools/${post.slug}`}>
                 <div className="p-6 md:p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-center min-h-[200px]">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 font-mono mb-4">
+                  <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-500 font-mono mb-4">
                     <span className="border border-gray-200 px-2 py-1 rounded text-black font-semibold">Trending Tools</span>
                     <span>{post.readingTime || "5 Min read"}</span>
                     {post.date && (

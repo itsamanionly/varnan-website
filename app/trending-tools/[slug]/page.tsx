@@ -54,9 +54,9 @@ export default async function TrendingToolPostPage({ params }: Props) {
       <div className="container mx-auto px-2 pb-10">
         <Navbar />
       </div>
-      <main className="flex-grow">
-        <article className="max-w-5xl mx-auto px-4 py-8 font-merri">
-          <h1 className="font-extrabold mb-4 tracking-wider text-4xl md:text-7xl">
+      <main className="flex-grow w-full overflow-hidden">
+        <article className="max-w-5xl mx-auto px-4 md:px-6 py-8 font-merri w-full">
+          <h1 className="font-extrabold mb-4 tracking-wider text-4xl md:text-7xl break-words">
             {post.frontmatter.title}
           </h1>
           {post.frontmatter.date ? (
@@ -64,7 +64,7 @@ export default async function TrendingToolPostPage({ params }: Props) {
               {new Date(post.frontmatter.date).toDateString()}
             </p>
           ) : null}
-          <div className="prose prose-lg max-w-none">{post.content}</div>
+          <div className="prose prose-base md:prose-lg max-w-none w-full break-words prose-pre:max-w-[85vw] md:prose-pre:max-w-full prose-pre:overflow-x-auto">{post.content}</div>
         </article>
       </main>
       <div className="mt-auto">
