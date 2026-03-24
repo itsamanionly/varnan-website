@@ -64,7 +64,7 @@ export default async function TrendingToolPostPage({ params }: Props) {
               {new Date(post.frontmatter.date).toDateString()}
             </p>
           ) : null}
-          <div className="prose prose-base md:prose-lg max-w-none w-full break-words prose-pre:max-w-[85vw] md:prose-pre:max-w-full prose-pre:overflow-x-auto">{post.content}</div>
+          <div className="prose prose-base md:prose-lg max-w-none w-full">{post.content}</div>
         </article>
       </main>
       <div className="mt-auto">

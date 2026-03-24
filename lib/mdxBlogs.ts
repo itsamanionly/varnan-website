@@ -8,6 +8,7 @@ import * as runtime from "react/jsx-runtime";
 import type React from "react";
 import { cache } from "react";
 import { FAQSection, FAQItem } from "@/components/mdx/faq";
+import { CodeBlock } from "@/components/mdx/code-block";
 
 export type BlogFrontmatter = {
   title: string;
@@ -149,6 +150,7 @@ export async function getBlogPost(slug: string): Promise<
     const components = {
       FAQSection,
       FAQItem,
+      pre: CodeBlock,
     };
 
     // Create proper React element with components

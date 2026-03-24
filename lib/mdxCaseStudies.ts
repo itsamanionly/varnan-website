@@ -8,6 +8,7 @@ import * as runtime from "react/jsx-runtime";
 import { cache } from "react";
 import type React from "react";
 import { FAQSection, FAQItem } from "@/components/mdx/faq";
+import { CodeBlock } from "@/components/mdx/code-block";
 
 export type CaseStudyFrontmatter = {
   title: string;
@@ -148,6 +149,7 @@ export async function getCaseStudy(slug: string): Promise<
     const components = {
       FAQSection,
       FAQItem,
+      pre: CodeBlock,
     };
 
     // Create proper React element with components
