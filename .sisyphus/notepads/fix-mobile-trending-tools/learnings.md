@@ -1,5 +1,0 @@
-- Tailwind Typography (`prose`) code blocks (`<pre>`) can cause horizontal overflow on mobile devices if not explicitly constrained.
-- To fix this, apply `prose-pre:max-w-[85vw]` (or a specific width) and `prose-pre:overflow-x-auto` to the prose container.
-- Additionally, ensure the parent containers (`main`, `article`) have `w-full` and `overflow-hidden` (on the outermost container) to prevent the page from stretching.
-- Use `break-words` on headings and the prose container to prevent long words from breaking the layout.
-- Fixed horizontal overflow in Trending Tools card by adding `flex-wrap` and responsive gap/text sizes (`gap-3 md:gap-4 text-xs md:text-sm`) to the metadata container.
